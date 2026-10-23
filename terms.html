@@ -16,14 +16,16 @@
 <meta property="og:title" content="Användarvillkor – Tavana">
 <meta property="og:description" content="Tavanas användarvillkor.">
 <meta property="og:url" content="https://tavana.app/terms">
-<meta property="og:image" content="https://tavana.app/assets/icon-512.png">
-<meta property="og:image:width" content="512">
-<meta property="og:image:height" content="512">
-<meta property="og:image:alt" content="Tavanas appikon: en grön punkt omgiven av ringar">
+<meta property="og:image" content="https://tavana.app/assets/og-sv.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Tavana – Träna efter hur du mår i dag.">
 <meta property="og:locale" content="sv_SE">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/fraunces-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
@@ -38,8 +40,10 @@
     </a>
     <nav class="site-nav" aria-label="Huvudmeny">
       <ul>
+        <li class="nav-optional"><a href="/#sa-funkar-det">Så funkar det</a></li>
+        <li class="nav-optional"><a href="/#fragor">Frågor</a></li>
         <li><a href="/support">Support</a></li>
-        <li><a class="lang-switch" href="/en/terms" hreflang="en" lang="en" aria-label="Read in English">English</a></li>
+        <li><a class="lang-switch" href="/en/terms" hreflang="en" lang="en" aria-label="Read in English">EN</a></li>
       </ul>
     </nav>
   </div>
@@ -62,16 +66,26 @@
 </article>
 </main>
 <footer class="site-footer">
-  <div class="wrap">
-    <nav aria-label="Sidfot">
-      <ul>
-        <li><a href="/privacy">Integritet</a></li>
-        <li><a href="/terms" aria-current="page">Villkor</a></li>
-        <li><a href="/support">Support</a></li>
-        <li><a href="/delete-account">Radera konto</a></li>
-      </ul>
-    </nav>
-    <p>© 2026 Tavana. Webbplatsen använder inga kakor och ingen analys.</p>
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <picture>
+        <source srcset="/assets/logo-dark.svg" media="(prefers-color-scheme: dark)">
+        <img src="/assets/logo.svg" alt="Tavana" width="132" height="40">
+      </picture>
+      <p>Träning efter hur du mår i dag.</p>
+    </div>
+    <div>
+      <nav aria-label="Sidfot">
+        <ul>
+          <li><a href="/privacy">Integritet</a></li>
+          <li><a href="/terms" aria-current="page">Villkor</a></li>
+          <li><a href="/support">Support</a></li>
+          <li><a href="/delete-account">Radera konto</a></li>
+          <li><a href="/en/" hreflang="en" lang="en">English</a></li>
+        </ul>
+      </nav>
+      <p class="footer-meta">© 2026 Tavana. Webbplatsen använder inga kakor och ingen analys.</p>
+    </div>
   </div>
 </footer>
 </body>

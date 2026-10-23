@@ -1,30 +1,49 @@
 <!doctype html>
-<html lang="sv">
+<!-- CTA-läge: data-cta="soon" | "appstore" | "testflight". Ändra inte för hand – kör scripts/set-cta.mjs (se README, "CTA-lägen"). -->
+<html lang="sv" data-cta="soon">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tavana – träna efter dagsformen</title>
-<meta name="description" content="Tavana föreslår vad du ska träna i dag utifrån sömn, vilopuls, HRV, din senaste träning och en kort check-in. Kommer snart på App Store.">
+<title>Tavana – träna efter dagsform och börja träna igen</title>
+<meta name="description" content="Börja träna igen utan att köra över dig själv. Tavana läser av sömn, HRV, vilopuls och en kort check-in och ger dig ett lugnt råd varje dag: styrka, kondition, återhämtning eller vila. Gratis att börja, för iPhone.">
 <link rel="canonical" href="https://tavana.app/">
 <link rel="alternate" hreflang="sv" href="https://tavana.app/">
 <link rel="alternate" hreflang="en" href="https://tavana.app/en/">
 <link rel="alternate" hreflang="x-default" href="https://tavana.app/">
 <meta name="theme-color" content="#FBF8F1" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#141711" media="(prefers-color-scheme: dark)">
+<!-- Smart App Banner i Safari: avkommentera och fyll i app-id när appen finns i App Store. Styrs av scripts/set-cta.mjs. -->
+<!-- APP-BANNER:START --><!-- <meta name="apple-itunes-app" content="app-id=FYLL-I"> --><!-- APP-BANNER:END -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Tavana">
-<meta property="og:title" content="Tavana – träna efter dagsformen">
-<meta property="og:description" content="Tavana föreslår vad du ska träna i dag utifrån sömn, vilopuls, HRV, din senaste träning och en kort check-in. Kommer snart på App Store.">
+<meta property="og:title" content="Tavana – träna efter hur du mår i dag">
+<meta property="og:description" content="Ett lugnt, begripligt träningsråd varje dag utifrån sömn, återhämtning och en kort check-in. För dig som vill komma tillbaka till träningen.">
 <meta property="og:url" content="https://tavana.app/">
-<meta property="og:image" content="https://tavana.app/assets/icon-512.png">
-<meta property="og:image:width" content="512">
-<meta property="og:image:height" content="512">
-<meta property="og:image:alt" content="Tavanas appikon: en grön punkt omgiven av ringar">
+<meta property="og:image" content="https://tavana.app/assets/og-sv.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Tavana – Träna efter hur du mår i dag. En telefon visar rådet ”Tavana rekommenderar ett lättare pass”.">
 <meta property="og:locale" content="sv_SE">
-<meta name="twitter:card" content="summary">
+<meta property="og:locale:alternate" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/fraunces-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Tavana",
+  "url": "https://tavana.app/",
+  "image": "https://tavana.app/assets/icon-512.png",
+  "operatingSystem": "iOS",
+  "applicationCategory": "HealthApplication",
+  "inLanguage": ["sv", "en"],
+  "description": "Träningsapp som anpassar dagens träning efter dagsformen. Tavana läser sömn, HRV, vilopuls och steg från Apple Hälsa om du tillåter, tar in en kort check-in och föreslår styrka, kondition, återhämtning eller vila – med en förklaring."
+}
+</script>
 </head>
 <body>
 <a class="skip-link" href="#main">Hoppa till innehållet</a>
@@ -38,129 +57,420 @@
     </a>
     <nav class="site-nav" aria-label="Huvudmeny">
       <ul>
-        <li><a href="/support">Support</a></li>
-        <li><a class="lang-switch" href="/en/" hreflang="en" lang="en" aria-label="Read in English">English</a></li>
+        <li class="nav-optional"><a href="#sa-funkar-det">Så funkar det</a></li>
+        <li class="nav-optional"><a href="#fragor">Frågor</a></li>
+        <li><a class="lang-switch" href="/en/" hreflang="en" lang="en" aria-label="Read in English">EN</a></li>
+        <li class="nav-cta-item cta-appstore"><a class="nav-cta" href="/app">Hämta appen</a></li>
+        <li class="nav-cta-item cta-testflight"><a class="nav-cta" href="/beta">Testa betan</a></li>
       </ul>
     </nav>
   </div>
 </header>
+
 <main id="main">
-<section class="hero">
-  <div class="wrap">
-    <p class="eyebrow">Träningscoach för iPhone</p>
-    <h1>Träna efter dagsformen, inte efter ett schema som inte vet hur du mår.</h1>
-    <p class="lead">Tavana tittar på hur du har sovit, din vilopuls och HRV, din senaste träning och en kort check-in – och föreslår vad som passar att träna i dag. Lugnt, begripligt och utifrån dig.</p>
-    <p class="badge">Kommer snart på App Store</p>
-    <p class="badge-note">Gratis att börja. För iPhone först, Android senare.</p>
+<section class="hero" aria-labelledby="hero-title">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">För dig som vill börja träna igen</p>
+      <h1 id="hero-title">Träna efter hur du mår <em>i&nbsp;dag</em>.</h1>
+      <p class="lead">Kort natt, tung vecka, första passet på länge? Tavana läser av sömn, återhämtning och en snabb check-in och ger dig ett lugnt råd varje dag – styrka, kondition, återhämtning eller vila. Med en förklaring. Utan poäng och utan dåligt samvete.</p>
+
+      <div class="cta" id="ladda-ned">
+        <!-- Läge "soon" -->
+        <p class="cta-mode cta-soon soon-pill"><span class="live-dot" aria-hidden="true"></span>Kommer snart till iPhone</p>
+        <!-- Läge "appstore": /app pekar på App Store via vercel.json. Slås på med scripts/set-cta.mjs. Kräver Apples officiella märken i assets/badges/ (se README). -->
+        <a class="cta-mode cta-appstore store-badge" href="/app"><picture><source srcset="/assets/badges/app-store-badge-sv-white.svg" media="(prefers-color-scheme: dark)"><img src="/assets/badges/app-store-badge-sv.svg" alt="Ladda ned på App Store" loading="lazy" width="156" height="52"></picture></a>
+        <!-- Läge "testflight" (sekundärt): /beta pekar på den publika TestFlight-länken via vercel.json -->
+        <a class="cta-mode cta-testflight btn btn-primary" href="/beta">Testa betan på iPhone</a>
+        <a class="btn btn-ghost" href="#sa-funkar-det">Se hur det funkar</a>
+        <p class="cta-note">
+          <span class="cta-mode cta-soon">Gratis att börja<span class="sep" aria-hidden="true">·</span>Android kommer senare</span>
+          <span class="cta-mode cta-appstore">Gratis att börja<span class="sep" aria-hidden="true">·</span>För iPhone</span>
+          <span class="cta-mode cta-testflight">Via Apples app TestFlight<span class="sep" aria-hidden="true">·</span>Gratis</span>
+        </p>
+      </div>
+
+      <ul class="hero-proof">
+        <li>Inga poäng</li>
+        <li>Ingen reklam</li>
+        <li>Med eller utan Apple Hälsa</li>
+      </ul>
+    </div>
+
+    <div class="hero-visual">
+      <div class="float-card float-a" aria-hidden="true">
+        <span class="dot dot-amber"></span>
+        <span><strong>Gul i dag</strong>jämfört med din egen baslinje</span>
+      </div>
+      <div class="float-card float-b" aria-hidden="true">
+        <span class="dot dot-green"></span>
+        <span><strong>Check-in klar</strong>Energi 2 av 5 · Stress 4 av 5</span>
+      </div>
+      <figure class="phone-figure">
+        <div class="phone" role="img" aria-label="Illustration av Tavanas vy Idag: dagsformen är gul och kortet säger ”Tavana rekommenderar ett lättare pass” eftersom sömnen låg under din baslinje.">
+          <div class="phone-screen" aria-hidden="true">
+            <!-- Byt till riktig skärmdump: <img src="/assets/screens/sv/today.webp" width="1290" height="2796" alt=""> (se README) -->
+            <div class="ui-status"><span>9:41</span><i></i></div>
+            <p class="ui-sub">Tisdag</p>
+            <p class="ui-title">Idag</p>
+            <div class="ui-card ui-card-amber">
+              <span class="ui-chip ui-chip-amber"><span class="dot"></span>Gul dagsform</span>
+              <p class="ui-h">Tavana rekommenderar ett lättare pass</p>
+              <p class="ui-p">Du sov kortare än vanligt i natt. Dagens pass blir lite lättare – du bestämmer alltid.</p>
+              <ul class="ui-rows">
+                <li><b>Sömn</b><span>under din baslinje</span></li>
+                <li><b>HRV</b><span>som vanligt</span></li>
+                <li><b>Check-in</b><span>stress 4 av 5</span></li>
+              </ul>
+              <div class="ui-btn">Starta lättare version</div>
+              <span class="ui-link">Se lättare alternativ</span>
+            </div>
+            <div class="ui-card">
+              <p class="ui-label">Dagens pass</p>
+              <div class="ui-session">
+                <div><b>Styrka · helkropp</b><span>5 övningar à 2 set</span></div>
+                <span class="ui-icon"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <figcaption class="phone-caption">Illustration av appen</figcaption>
+      </figure>
+    </div>
   </div>
 </section>
 
-<section class="section" aria-labelledby="how">
+<section class="section section-alt" aria-labelledby="problem">
   <div class="wrap">
-    <p class="eyebrow">Så fungerar det</p>
-    <h2 id="how">Ett råd om dagen, med en förklaring</h2>
-    <ol class="steps">
-      <li>
-        <h3>Berätta lite om dig</h3>
-        <p>Tre korta steg om ditt mål, hur och var du vill träna och hur ofta. Inget program startar automatiskt – du väljer själv om och när.</p>
+    <div class="section-head">
+      <p class="eyebrow">Känner du igen dig?</p>
+      <h2 id="problem">Livet följer inget träningsschema.</h2>
+      <p class="lead">Du har tränat förut. Sedan kom jobbet, barnen, en sjukdom – eller bara livet. Nu vill du tillbaka. Men de flesta program utgår från att varje dag är en bra dag.</p>
+    </div>
+    <ul class="scenes">
+      <li class="scene reveal">
+        <span class="scene-time">06.40, tisdag</span>
+        <h3>Du sov fem timmar.</h3>
+        <p>Programmet säger intervaller. Kroppen säger något annat. Antingen kör du ändå, eller så hoppar du över och känner dig misslyckad.</p>
       </li>
-      <li>
-        <h3>Koppla Apple Hälsa om du vill</h3>
-        <p>Med ditt tillstånd läser Tavana sömn, HRV, vilopuls och steg. Du kan också använda appen utan – då bygger rådet på det du själv anger.</p>
+      <li class="scene reveal">
+        <span class="scene-time">Mitt i veckan</span>
+        <h3>Stressen sitter i axlarna.</h3>
+        <p>Passet i kalendern känns som ännu en sak att prestera i. Ingen frågar hur du faktiskt har det.</p>
       </li>
-      <li>
-        <h3>Gör en kort check-in</h3>
-        <p>Hur energisk och hur stressad känner du dig, hur sov du och mår du dåligt? Några tryck, inga långa formulär.</p>
+      <li class="scene reveal">
+        <span class="scene-time">Efter ett långt uppehåll</span>
+        <h3>Första passet på länge.</h3>
+        <p>Var ska du börja? Rädslan för att ta i för hårt – eller för lite – gör det lätt att skjuta upp det en dag till.</p>
       </li>
-      <li>
-        <h3>Få dagens råd</h3>
-        <p>Styrka, kondition, återhämtning eller vila – och varför. Passet du loggar tas med när Tavana föreslår nästa dag.</p>
-      </li>
-    </ol>
+    </ul>
+    <p class="punchline reveal">Det är inte du som är problemet. Det är planen som inte vet <em>hur du mår</em>.</p>
+  </div>
+</section>
+
+<section class="section" id="sa-funkar-det" aria-labelledby="how">
+  <div class="wrap how-grid">
+    <div class="how-visual">
+      <figure class="phone-figure">
+        <div class="phone" role="img" aria-label="Illustration av Tavanas snabba incheckning med frågor om energi, stress, sömn och om du mår dåligt.">
+          <div class="phone-screen" aria-hidden="true">
+            <!-- Byt till riktig skärmdump: <img src="/assets/screens/sv/checkin.webp" width="1290" height="2796" alt=""> -->
+            <div class="ui-status"><span>7:12</span><i></i></div>
+            <p class="ui-title">Snabb incheckning</p>
+            <p class="ui-sub">Några tryck – sedan får du dagens råd.</p>
+            <div class="ui-card">
+              <p class="ui-q">Hur är energin nu?</p>
+              <div class="ui-scale"><span>1</span><span class="on">2</span><span>3</span><span>4</span><span>5</span></div>
+              <div class="ui-scale-ends"><span>Låg</span><span>Hög</span></div>
+            </div>
+            <div class="ui-card">
+              <p class="ui-q">Hur stressad känner du dig?</p>
+              <div class="ui-scale"><span>1</span><span>2</span><span>3</span><span class="on">4</span><span>5</span></div>
+              <div class="ui-scale-ends"><span>Lugn</span><span>Stressad</span></div>
+            </div>
+            <div class="ui-card">
+              <p class="ui-q">Hur sov du?</p>
+              <div class="ui-scale"><span>1</span><span class="on">2</span><span>3</span><span>4</span><span>5</span></div>
+            </div>
+            <div class="ui-card ui-toggle-row">
+              <p class="ui-q">Mår du dåligt?</p>
+              <span class="ui-toggle"></span>
+            </div>
+            <div class="ui-btn">Spara incheckning</div>
+          </div>
+        </div>
+        <figcaption class="phone-caption">Illustration av appen</figcaption>
+      </figure>
+    </div>
+    <div>
+      <div class="section-head tight">
+        <p class="eyebrow">Så funkar det</p>
+        <h2 id="how">Ett lugnt råd varje dag. Med en förklaring.</h2>
+        <p class="lead">Ingen ny hobby att lära sig. Svara på några frågor, låt appen läsa av dagen och få ett råd du förstår.</p>
+      </div>
+      <ol class="steps">
+        <li class="reveal">
+          <h3>Berätta var du står</h3>
+          <p>Tre korta frågor om ditt mål, hur och var du vill träna och hur ofta. Inget program drar igång av sig självt.</p>
+        </li>
+        <li class="reveal">
+          <h3>Koppla Apple Hälsa – om du vill</h3>
+          <p>Med ditt tillstånd läser Tavana sömn, HRV, vilopuls och steg. Appen fungerar också utan; då utgår rådet från det du själv anger.</p>
+        </li>
+        <li class="reveal">
+          <h3>Checka in på några sekunder</h3>
+          <p>Energi, stress, sömn och om du mår dåligt. Inga långa formulär.</p>
+        </li>
+        <li class="reveal">
+          <h3>Få dagens råd</h3>
+          <p>Styrka, kondition, återhämtning eller vila – och varför. Det du tränar tas med när Tavana föreslår nästa dag.</p>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" aria-labelledby="day">
+  <div class="wrap day-grid">
+    <div>
+      <div class="section-head tight">
+        <p class="eyebrow">En dag med Tavana</p>
+        <h2 id="day">En kort natt behöver inte bli en förlorad dag.</h2>
+      </div>
+      <ol class="timeline">
+        <li class="reveal">
+          <span class="when">Morgon</span>
+          <h3>Dagsformen blir gul</h3>
+          <p>Du sov kortare än vanligt och stressen är hög. I stället för att låtsas att allt är som vanligt säger appen det rakt ut: <span class="quote-ui">”Tavana rekommenderar ett lättare pass.”</span> Och förklarar varför.</p>
+        </li>
+        <li class="reveal">
+          <span class="when">Passet</span>
+          <h3>Ett set i taget</h3>
+          <p>Du följer passet övning för övning, set för set, med instruktioner. Känns en övning för tung i dag? Byt till en lättare variant direkt. Känns den för lätt? Ta ett steg upp.</p>
+        </li>
+        <li class="reveal">
+          <span class="when">Efteråt</span>
+          <h3>Det räknas – och syns</h3>
+          <p>Passet sparas i din historik och tas med i morgondagens råd. Under Insikter ser du hur sömn och träning har sett ut de senaste dagarna och får en sammanfattning av veckan.</p>
+        </li>
+      </ol>
+    </div>
+    <div class="how-visual">
+      <figure class="phone-figure">
+        <div class="phone" role="img" aria-label="Illustration av ett pass i Tavana: övning 2 av 5 med avbockade set och knappar för att byta till en lättare eller svårare variant.">
+          <div class="phone-screen" aria-hidden="true">
+            <!-- Byt till riktig skärmdump: <img src="/assets/screens/sv/workout.webp" width="1290" height="2796" alt=""> -->
+            <div class="ui-status"><span>17:48</span><i></i></div>
+            <p class="ui-sub">Styrka · helkropp</p>
+            <p class="ui-title">Övning 2 av 5</p>
+            <div class="ui-progress"><i></i></div>
+            <div class="ui-card">
+              <p class="ui-h first">Knäböj med hantel</p>
+              <p class="ui-p">Fötterna axelbrett, bröstet upp. Sänk dig kontrollerat.</p>
+              <ul class="ui-sets">
+                <li class="done"><span class="n">Set 1</span><span>10 reps</span><span>8 kg</span><span class="ui-check"></span></li>
+                <li class="now"><span class="n">Set 2</span><span>10 reps</span><span>8 kg</span><span class="ui-check"></span></li>
+                <li><span class="n">Set 3</span><span>10 reps</span><span>8 kg</span><span class="ui-check"></span></li>
+              </ul>
+              <div class="ui-swap"><span>Lättare</span><span>Svårare</span></div>
+            </div>
+            <div class="ui-card ui-next">
+              <p class="ui-label">Nästa</p>
+              <div class="ui-session">
+                <div><b>Armhävning mot bänk</b><span>3 set · 8 reps</span></div>
+              </div>
+            </div>
+            <div class="ui-card ui-next">
+              <div class="ui-session">
+                <div><b>Rodd med hantel</b><span>3 set · 10 reps</span></div>
+              </div>
+            </div>
+            <div class="ui-btn">Klar med set 2</div>
+          </div>
+        </div>
+        <figcaption class="phone-caption">Illustration av appen</figcaption>
+      </figure>
+    </div>
   </div>
 </section>
 
 <section class="section" aria-labelledby="readiness">
   <div class="wrap">
-    <p class="eyebrow">Dagsform</p>
-    <h2 id="readiness">Tre lägen, inga poäng</h2>
-    <p class="lead">Tavana jämför dagens signaler med din egen baslinje och sammanfattar dem i ett av tre lägen. Läget styr hur träningen anpassas i dag – inget mer.</p>
+    <div class="section-head center">
+      <p class="eyebrow">Dagsform</p>
+      <h2 id="readiness">Tre lägen. Inga poäng.</h2>
+      <p class="lead">Tavana jämför dagens signaler med din egen baslinje – inte med någon annans. Resultatet blir grönt, gult eller rött. Aldrig en siffra att jaga eller ett betyg på dig.</p>
+    </div>
     <ul class="states">
-      <li class="card state">
+      <li class="state state-green reveal">
         <h3><span class="dot dot-green" aria-hidden="true"></span>Grön</h3>
-        <p>Signalerna ser ut som vanligt. Träna som du tänkt.</p>
+        <span class="tag">Kör som du tänkt.</span>
+        <p>Signalerna ser ut som vanligt för dig. Träna enligt planen.</p>
       </li>
-      <li class="card state">
+      <li class="state state-amber reveal">
         <h3><span class="dot dot-amber" aria-hidden="true"></span>Gul</h3>
-        <p>Något sticker ut, till exempel kort sömn eller hög stress. Träna, men håll igen lite i dag.</p>
+        <span class="tag">Träna, men håll igen lite.</span>
+        <p>Något sticker ut, till exempel kort sömn eller hög stress. Tavana föreslår en lättare version av dagens pass.</p>
       </li>
-      <li class="card state">
+      <li class="state state-red reveal">
         <h3><span class="dot dot-red" aria-hidden="true"></span>Röd</h3>
-        <p>Signalerna avviker tydligt från din baslinje, eller så har du angett i din check-in att du är sjuk. Ett lätt pass, återhämtning eller vila passar bättre.</p>
+        <span class="tag">I dag är återhämtning rätt val.</span>
+        <p>Signalerna avviker tydligt från din baslinje, eller så har du angett att du är sjuk. Då föreslås återhämtning eller vila – ingen ikappträning behövs.</p>
       </li>
     </ul>
-    <p class="note">Dagsformen är ett stöd för att planera träningen, inte en hälsobedömning eller medicinsk rådgivning. De första veckorna lär sig Tavana fortfarande din baslinje. Och det är alltid du som bestämmer.</p>
+    <p class="note">De första veckorna lär sig Tavana din baslinje, så rådet blir mer personligt ju längre du använder appen. Dagsformen är ett stöd för att planera träningen, inte en hälsobedömning eller medicinsk rådgivning. Och det är alltid du som bestämmer.</p>
   </div>
 </section>
 
-<section class="section" aria-labelledby="more">
+<section class="section section-alt" aria-labelledby="comeback">
   <div class="wrap">
-    <p class="eyebrow">I appen</p>
-    <h2 id="more">Mer än dagens råd</h2>
-    <div class="features">
-      <div class="card">
-        <h3>Logga passet</h3>
-        <p>Följ passet övning för övning och set för set. Övningarna har instruktioner, och du kan byta till en lättare eller svårare variant.</p>
-      </div>
-      <div class="card">
-        <h3>Program när du vill</h3>
-        <p>Välj ett program under Resa om du vill ha en plan över flera veckor – eller träna utifrån dagens råd.</p>
-      </div>
-      <div class="card">
-        <h3>Insikter</h3>
-        <p>Se hur sömn och träning har sett ut de senaste dagarna och få en sammanfattning av veckan.</p>
-      </div>
-      <div class="card">
-        <h3>Historik och framsteg</h3>
-        <p>Se dina tidigare pass och hur det har gått för varje övning över tid.</p>
-      </div>
+    <div class="section-head">
+      <p class="eyebrow">För återstartare</p>
+      <h2 id="comeback">Gjord för att komma tillbaka – och stanna kvar.</h2>
+      <p class="lead">Att börja om är något annat än att börja från noll. Tavana låter dig ta det i din takt, utan att tappa riktningen.</p>
     </div>
+    <ul class="features">
+      <li class="feature reveal">
+        <span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="8"/></svg></span>
+        <h3>Börja där du är</h3>
+        <p>Tre frågor, sedan är du igång. Inget färdigt program som förutsätter att du redan är i form.</p>
+      </li>
+      <li class="feature reveal">
+        <span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 20h5v-5h5v-5h5V5h3"/></svg></span>
+        <h3>Lättare eller svårare</h3>
+        <p>Övningarna har instruktioner och progressionssteg. Byt till en lättare variant en tung dag, eller ta ett steg upp när du är redo.</p>
+      </li>
+      <li class="feature reveal">
+        <span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg></span>
+        <h3>Vila räknas</h3>
+        <p>Säger din check-in att du är sjuk blir dagsformen röd och Tavana föreslår vila eller återhämtning i stället för att pressa på.</p>
+      </li>
+      <li class="feature reveal">
+        <span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12h4l3-7 4 14 3-7h4"/></svg></span>
+        <h3>Den lär känna dig</h3>
+        <p>Baslinjen byggs upp under de första veckorna, så att rådet utgår från ditt normala – inte från ett genomsnitt.</p>
+      </li>
+      <li class="feature feature-wide reveal">
+        <span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19c4-1 5-5 8-7s6-2 8-7"/><circle cx="4" cy="19" r="1.5"/><circle cx="20" cy="5" r="1.5"/></svg></span>
+        <h3>Program när du är redo</h3>
+        <p>Under Resa finns program över flera veckor. Eller träna helt utifrån dagens råd – det är upp till dig.</p>
+        <ul class="chips">
+          <li>Couch to 5K</li><li>5K</li><li>10K</li><li>Halvmaraton</li><li>Maraton</li><li>Nybörjarstyrka</li>
+        </ul>
+      </li>
+      <li class="feature reveal">
+        <span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span>
+        <h3>Se att det går framåt</h3>
+        <p>Historik över dina pass och framsteg för varje övning, plus en sammanfattning av veckan.</p>
+      </li>
+    </ul>
   </div>
 </section>
 
 <section class="section" aria-labelledby="privacy">
   <div class="wrap">
-    <p class="eyebrow">Integritet</p>
-    <h2 id="privacy">Integritet i korthet</h2>
-    <ul class="checklist">
-      <li>Tavana läser hälsodata från Apple Hälsa bara om du ger tillstånd, och appen ber om ditt samtycke innan hälsodata används.</li>
-      <li>Ingen reklam och ingen annonsspårning. Din data används för att ge dig råd i appen, inte för annonser.</li>
-      <li>Du kan exportera din data och radera ditt konto direkt i appen. <a href="/delete-account">Så raderar du kontot</a>.</li>
-      <li>Den här webbplatsen använder inga kakor, ingen analys och inga externa tjänster.</li>
-    </ul>
-    <p><a href="/privacy">Läs integritetspolicyn</a></p>
+    <div class="trust">
+      <div>
+        <p class="eyebrow">Integritet</p>
+        <h2 id="privacy">Din hälsodata är din.</h2>
+        <p class="lead">Tavana behöver veta hur du mår för att ge bra råd. Därför är spelreglerna enkla.</p>
+      </div>
+      <div>
+        <ul class="checklist">
+          <li>Hälsodata från Apple Hälsa läses bara om du ger tillstånd, och appen ber om ditt samtycke innan den används.</li>
+          <li>Ingen reklam och ingen annonsspårning. Din data används för att ge dig råd i appen – inte för annonser.</li>
+          <li>Exportera din data eller radera ditt konto direkt i appen, när du vill.</li>
+          <li>Tavana är för dig som är 18 år eller äldre.</li>
+          <li>Den här webbplatsen använder inga kakor, ingen analys och inga externa tjänster.</li>
+        </ul>
+        <p class="trust-links"><a href="/privacy">Integritetspolicy</a><a href="/delete-account">Så raderar du kontot</a></p>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="section" aria-labelledby="soon">
+<section class="section section-alt" id="fragor" aria-labelledby="faq">
   <div class="wrap">
-    <h2 id="soon">Kommer snart på App Store</h2>
-    <p class="muted">Tavana är gratis att börja använda. Frågor redan nu? <a href="/support">Kontakta oss</a>.</p>
-    <!-- När appen finns i App Store: ersätt texten ovan med en länk till appens App Store-sida (https://apps.apple.com/...) och Apples officiella "Ladda ned på App Store"-märke som lokal fil. -->
+    <div class="section-head center">
+      <p class="eyebrow">Vanliga frågor</p>
+      <h2 id="faq">Bra att veta innan du börjar</h2>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>Jag har inte tränat på länge. Passar Tavana mig?</summary>
+        <p>Ja – det är just dig vi har tänkt på. Du börjar med tre korta frågor, inget program startar automatiskt, och du kan alltid byta en övning mot en lättare variant. Rådet utgår från hur du mår i dag, inte från var du var för två år sedan.</p>
+      </details>
+      <details>
+        <summary>Måste jag koppla Apple Hälsa?</summary>
+        <p>Nej. Med Apple Hälsa kan rådet ta hänsyn till sömn, HRV, vilopuls och steg. Utan Apple Hälsa bygger det på din check-in och det du själv anger.</p>
+      </details>
+      <details>
+        <summary>Varför inga poäng?</summary>
+        <p>För att ett tal lätt blir något att jaga eller oroa sig över. För att anpassa dagens träning räcker tre lägen: grön, gul eller röd, jämfört med din egen baslinje. Och du får alltid veta varför.</p>
+      </details>
+      <details>
+        <summary>Måste jag följa ett program?</summary>
+        <p>Nej. Du kan träna helt utifrån dagens råd. Vill du ha en plan över flera veckor finns program under Resa, till exempel Couch to 5K eller nybörjarstyrka.</p>
+      </details>
+      <details>
+        <summary>Är dagsformen ett medicinskt råd?</summary>
+        <p>Nej. Den är ett stöd för hur du lägger upp träningen i dag, inte en hälsobedömning. Har du symtom eller frågor om din hälsa, kontakta vården.</p>
+      </details>
+      <details>
+        <summary>Vad händer med min data?</summary>
+        <p>Den används för att ge dig råd i appen – aldrig för reklam. Hälsodata används bara med ditt samtycke, och du kan exportera din data och radera ditt konto direkt i appen. Läs mer i <a href="/privacy">integritetspolicyn</a>.</p>
+      </details>
+      <details>
+        <summary>Vad kostar det?</summary>
+        <p>Tavana är gratis att börja använda.</p>
+      </details>
+      <details>
+        <summary>Finns Tavana för Android?</summary>
+        <p>Inte än. Tavana kommer till iPhone först och till Android senare.</p>
+      </details>
+    </div>
+    <p class="muted faq-more">Fler frågor? <a href="/support">Kontakta oss</a>.</p>
+  </div>
+</section>
+
+<section class="final" aria-labelledby="final">
+  <div class="wrap">
+    <div class="final-card">
+      <img class="mark" src="/assets/apple-touch-icon.png" alt="" width="64" height="64">
+      <h2 id="final">Nästa pass får gärna vara <em>ett lugnt pass</em>.</h2>
+      <p class="lead">Börja där du är. Tavana möter dig där – i dag, i morgon och de dagar som inte blev som du tänkt.</p>
+      <div class="cta">
+        <p class="cta-mode cta-soon soon-pill"><span class="live-dot" aria-hidden="true"></span>Kommer snart till iPhone</p>
+        <a class="cta-mode cta-appstore store-badge" href="/app"><img src="/assets/badges/app-store-badge-sv-white.svg" alt="Ladda ned på App Store" loading="lazy" width="156" height="52"></a>
+        <a class="cta-mode cta-testflight btn btn-primary" href="/beta">Testa betan på iPhone</a>
+        <p class="cta-note">Gratis att börja<span class="sep" aria-hidden="true">·</span>Ingen reklam<span class="sep" aria-hidden="true">·</span>Android kommer senare</p>
+      </div>
+    </div>
   </div>
 </section>
 </main>
+
 <footer class="site-footer">
-  <div class="wrap">
-    <nav aria-label="Sidfot">
-      <ul>
-        <li><a href="/privacy">Integritet</a></li>
-        <li><a href="/terms">Villkor</a></li>
-        <li><a href="/support">Support</a></li>
-        <li><a href="/delete-account">Radera konto</a></li>
-      </ul>
-    </nav>
-    <p>© 2026 Tavana. Webbplatsen använder inga kakor och ingen analys.</p>
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <picture>
+        <source srcset="/assets/logo-dark.svg" media="(prefers-color-scheme: dark)">
+        <img src="/assets/logo.svg" alt="Tavana" width="132" height="40">
+      </picture>
+      <p>Träning efter hur du mår i dag.</p>
+    </div>
+    <div>
+      <nav aria-label="Sidfot">
+        <ul>
+          <li><a href="/privacy">Integritet</a></li>
+          <li><a href="/terms">Villkor</a></li>
+          <li><a href="/support">Support</a></li>
+          <li><a href="/delete-account">Radera konto</a></li>
+          <li><a href="/en/" hreflang="en" lang="en">English</a></li>
+        </ul>
+      </nav>
+      <p class="footer-meta">© 2026 Tavana. Webbplatsen använder inga kakor och ingen analys.</p>
+    </div>
   </div>
 </footer>
 </body>
