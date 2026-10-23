@@ -1,0 +1,21 @@
+/* Källa för OG-bilderna (1200×630). Renderas med headless Chrome, se README. Ljust tema alltid. */
+:root { color-scheme: light; }
+html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
+body.og {
+  background: #FBF8F1;
+  color: #2A322A;
+  font-family: "Inter", system-ui, sans-serif;
+  position: relative;
+}
+.og::before, .og::after { content: ""; position: absolute; border-radius: 50%; filter: blur(70px); }
+.og::before { width: 620px; height: 620px; right: -140px; top: -220px; background: radial-gradient(circle, #D3E1BD, transparent 70%); }
+.og::after { width: 520px; height: 520px; left: -200px; bottom: -260px; background: radial-gradient(circle, #E8D9B0, transparent 70%); opacity: .8; }
+.og-copy { position: absolute; z-index: 1; left: 80px; top: 72px; width: 640px; }
+.og-copy img { width: 150px; height: auto; margin-bottom: 48px; }
+.og-copy h1 { font-family: "Fraunces", Georgia, serif; font-weight: 450; font-size: 76px; line-height: 1.02; letter-spacing: -0.03em; margin: 0 0 24px; }
+.og-copy h1 em { font-style: italic; font-weight: 400; color: #4A5A3D; }
+.og-copy p { font-size: 26px; line-height: 1.4; color: #5A6155; margin: 0; max-width: 560px; }
+.og-url { position: absolute; z-index: 1; left: 80px; bottom: 56px; display: flex; align-items: center; gap: 12px; font-weight: 600; font-size: 22px; color: #4A5A3D; }
+.og-url::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: #E8A838; }
+.og-phone { position: absolute; z-index: 1; right: 90px; top: 64px; transform: rotate(4deg); }
+.og-phone .phone { width: 300px; }
