@@ -888,6 +888,12 @@ main { display: block; }
 .page ol li::marker { color: var(--brand); font-weight: 600; }
 .page [lang="en"] h2 { margin-top: 2.4em; }
 .page li { margin-bottom: 0.5em; }
+.page .table-wrap { overflow-x: auto; margin: 1em 0 1.6em; -webkit-overflow-scrolling: touch; }
+.page table { width: 100%; min-width: 34rem; border-collapse: collapse; font-size: 0.95rem; line-height: 1.5; }
+.page th, .page td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--border); }
+.page th { font-weight: 600; border-bottom-width: 2px; }
+.page td:first-child { padding-left: 0; }
+.page th:first-child { padding-left: 0; }
 
 .placeholder {
   border: 2px dashed var(--border);
