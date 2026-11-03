@@ -7,14 +7,14 @@ typsnitt eller CDN:er och inga formulär; sidan behandlar inga personuppgifter.
 ## Struktur
 
 ```
-/                       svenska (rot)
+/                       engelska (rot, primärspråk)
 ├── index.html          startsida (promosida, se "Startsidans upplägg")
 ├── privacy.html        /privacy  – ram, policytext saknas (se platshållare)
 ├── terms.html          /terms    – ram, villkorstext saknas
 ├── support.html        /support  – kontaktadress (mailto) och vanliga frågor
 ├── delete-account.html /delete-account – radera konto i appen eller via mejl
-├── 404.html            tvåspråkig 404 (Vercel använder den automatiskt)
-├── en/                 engelska, samma sidor och samma struktur
+├── 404.html            tvåspråkig 404, engelska först (Vercel använder den automatiskt)
+├── sv/                 svenska, samma sidor och samma struktur
 ├── assets/
 │   ├── style.css       all CSS (ljust + mörkt läge via prefers-color-scheme)
 │   ├── fonts/          Fraunces + Inter (woff2, latin) och licenserna OFL-*.txt
@@ -27,9 +27,11 @@ typsnitt eller CDN:er och inga formulär; sidan behandlar inga personuppgifter.
 └── vercel.json         cleanUrls, redirecterna /app och /beta, säkerhetsheaders
 ```
 
-Vägarna `/privacy` och `/terms` länkas från iOS-appen
-(`tavana-ios/Coach/Features/Consent/ConsentView.swift:4`,
-`Settings/SettingsView.swift:654,666`) och får inte byta namn.
+Engelska är primärspråk (beslut 2026-11-03): engelska i roten, svenska under `/sv/`,
+och `/en/…` redirectas permanent till roten (`vercel.json`). Vägarna `/privacy`, `/terms`
+och `/sv/privacy`, `/sv/terms` länkas från iOS-appen efter appens språk
+(`tavana-ios/Coach/Features/Consent/ConsentView.swift`, `Settings/SettingsView.swift`)
+och får inte byta namn.
 
 Sidorna har gemensam header/footer utan build. Ändras de måste alla elva HTML-filer
 uppdateras.
@@ -63,7 +65,7 @@ påhittade citat, betyg eller siffror.
 ## CTA-lägen
 
 CTA:n finns i hero, i avslutningsbandet och (i App Store-/TestFlight-läget) som knapp i
-headern. Läget styrs av `data-cta` på `<html>` i `index.html` och `en/index.html`:
+headern. Läget styrs av `data-cta` på `<html>` i `index.html` och `sv/index.html`:
 
 | Läge | Visar | Länk |
 |---|---|---|
@@ -102,7 +104,7 @@ assets/badges/app-store-badge-en-white.svg  vitt märke, engelska
 Märket visas 52 px högt; justera inte under Apples minsta storlek.
 
 Efter lansering: uppdatera också "När kommer appen?" i `support.html` och
-`en/support.html` och "Android kommer senare"-raderna om det ändras.
+`sv/support.html` och "Android kommer senare"-raderna om det ändras.
 
 ## Telefonmockups → riktiga skärmdumpar
 
@@ -115,7 +117,7 @@ skärmdumpar så här:
    spara som WebP (kvalitet ~80, gärna < 150 KB styck):
    `assets/screens/sv/today.webp`, `checkin.webp`, `workout.webp` och samma under
    `assets/screens/en/`.
-2. I `index.html` och `en/index.html`: ersätt innehållet i varje `<div class="phone-screen">`
+2. I `index.html` och `sv/index.html`: ersätt innehållet i varje `<div class="phone-screen">`
    med raden i HTML-kommentaren som står först i den, t.ex.
    `<img src="/assets/screens/sv/today.webp" width="1290" height="2796" alt="">`
    (CSS:en fyller ramen med `object-fit: cover`). Behåll `aria-label` på `.phone`, men
@@ -157,14 +159,14 @@ Vercel: `npx vercel dev`.
 ## Platshållare – måste fyllas i före lansering
 
 - [ ] **Supportadress `support@tavana.app`** – inte bekräftad. Finns bara i
-      `support.html` och `en/support.html` (markerad med `<!-- FYLL I -->`).
-- [ ] **Integritetspolicy** – `privacy.html` och `en/privacy.html` visar bara
+      `support.html` och `sv/support.html` (markerad med `<!-- FYLL I -->`).
+- [ ] **Integritetspolicy** – `privacy.html` och `sv/privacy.html` visar bara
       "publiceras före lansering". Ersätt `.placeholder`-blocket med den granskade texten
       (se HTML-kommentaren) och fyll i "Senast uppdaterad". Publicera inte utkasten i
       `docs/legal/` som de är.
-- [ ] **Användarvillkor** – samma sak i `terms.html` och `en/terms.html`.
+- [ ] **Användarvillkor** – samma sak i `terms.html` och `sv/terms.html`.
 - [ ] **Radering: lagringstider/undantag** – kommentar i `delete-account.html` och
-      `en/delete-account.html`.
+      `sv/delete-account.html`.
 - [ ] **App Store** – lägg in märkena och kör `node scripts/set-cta.mjs appstore <app-id>`
       (se "CTA-lägen").
 - [ ] **Riktiga skärmdumpar** – se "Telefonmockups → riktiga skärmdumpar".

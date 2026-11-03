@@ -1,11 +1,11 @@
 #!/usr/bin/env node
-// Byter CTA-läge på startsidan (sv + en) på ett ställe.
+// Byter CTA-läge på startsidan (en + sv) på ett ställe.
 //
 //   node scripts/set-cta.mjs appstore 1234567890          # App Store-märke + länk, Smart App Banner på
 //   node scripts/set-cta.mjs testflight https://testflight.apple.com/join/XXXXXXXX
 //   node scripts/set-cta.mjs soon                          # tillbaka till "Kommer snart"
 //
-// Ändrar: data-cta på <html> i index.html och en/index.html, <meta name="apple-itunes-app">
+// Ändrar: data-cta på <html> i index.html och sv/index.html, <meta name="apple-itunes-app">
 // (bara i appstore-läget) och redirecterna /app och /beta i vercel.json.
 // Ingen build – skriptet körs en gång lokalt och resultatet committas.
 
@@ -14,7 +14,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
-const pages = ["index.html", "en/index.html"];
+const pages = ["index.html", "sv/index.html"];
 const badges = [
   "assets/badges/app-store-badge-sv.svg",
   "assets/badges/app-store-badge-sv-white.svg",
