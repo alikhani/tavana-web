@@ -41,7 +41,7 @@
   "operatingSystem": "iOS",
   "applicationCategory": "HealthApplication",
   "inLanguage": ["sv", "en"],
-  "description": "Träningsapp som anpassar dagens träning efter dagsformen. Tavana läser sömn, HRV, vilopuls och steg från Apple Hälsa om du tillåter, tar in en kort check-in och föreslår styrka, kondition, återhämtning eller vila – med en förklaring."
+  "description": "Träningsapp som anpassar dagens träning efter dagsformen. Tavana läser sömn, HRV och vilopuls från Apple Hälsa om du tillåter, tar in en kort check-in och föreslår styrka, kondition, återhämtning eller vila – med en förklaring."
 }
 </script>
 </head>
@@ -215,7 +215,7 @@
         </li>
         <li class="reveal">
           <h3>Koppla Apple Hälsa – om du vill</h3>
-          <p>Med ditt tillstånd läser Tavana sömn, HRV, vilopuls och steg. Appen fungerar också utan; då utgår rådet från det du själv anger.</p>
+          <p>Med ditt tillstånd läser Tavana sömn, HRV och vilopuls. Steg läses också, främst som reserv när de andra signalerna saknas. Appen fungerar också utan; då utgår rådet från det du själv anger.</p>
         </li>
         <li class="reveal">
           <h3>Checka in på några sekunder</h3>
@@ -246,7 +246,7 @@
         <li class="reveal">
           <span class="when">Passet</span>
           <h3>Ett set i taget</h3>
-          <p>Du följer passet övning för övning, set för set, med instruktioner. Känns en övning för tung idag? Byt till en lättare variant direkt. Känns den för lätt? Ta ett steg upp.</p>
+          <p>Du följer passet övning för övning, set för set, med instruktioner. Innan du startar kan en övning som ser för tung ut idag ersättas med en lättare variant, eller med en svårare om den ser för lätt ut.</p>
         </li>
         <li class="reveal">
           <span class="when">Efteråt</span>
@@ -257,7 +257,7 @@
     </div>
     <div class="how-visual">
       <figure class="phone-figure">
-        <div class="phone" role="img" aria-label="Illustration av ett pass i Tavana: övning 2 av 5 med avbockade set och knappar för att byta till en lättare eller svårare variant.">
+        <div class="phone" role="img" aria-label="Illustration av ett pass i Tavana: övning 2 av 5 med första setet avbockat och nästa övningar listade.">
           <div class="phone-screen" aria-hidden="true">
             <!-- Byt till riktig skärmdump: <img src="/assets/screens/sv/workout.webp" width="1290" height="2796" alt=""> -->
             <div class="ui-status"><span>17:48</span><i></i></div>
@@ -272,7 +272,6 @@
                 <li class="now"><span class="n">Set 2</span><span>10 reps</span><span>8 kg</span><span class="ui-check"></span></li>
                 <li><span class="n">Set 3</span><span>10 reps</span><span>8 kg</span><span class="ui-check"></span></li>
               </ul>
-              <div class="ui-swap"><span>Lättare</span><span>Svårare</span></div>
             </div>
             <div class="ui-card ui-next">
               <p class="ui-label">Nästa</p>
@@ -299,7 +298,7 @@
     <div class="section-head center">
       <p class="eyebrow">Dagsform</p>
       <h2 id="readiness">Tre lägen. Inga poäng.</h2>
-      <p class="lead">Tavana jämför dagens signaler med din egen baslinje – inte med någon annans. Resultatet blir grönt, gult eller rött. Aldrig en siffra att jaga eller ett betyg på dig.</p>
+      <p class="lead">Efter en vecka eller två med data jämför Tavana dagens signaler med din egen baslinje – inte med någon annans. Resultatet blir grönt, gult eller rött. Aldrig en siffra att jaga eller ett betyg på dig.</p>
     </div>
     <ul class="states">
       <li class="state state-green reveal">
@@ -318,7 +317,7 @@
         <p>Signalerna avviker tydligt från din baslinje, eller så har du angett att du är sjuk. Då föreslås återhämtning eller vila – ingen ikappträning behövs.</p>
       </li>
     </ul>
-    <p class="note">De första veckorna lär sig Tavana din baslinje, så rådet blir mer personligt ju längre du använder appen. Dagsformen är ett stöd för att planera träningen, inte en hälsobedömning eller medicinsk rådgivning. Och det är alltid du som bestämmer.</p>
+    <p class="note">De första veckorna lär sig Tavana din baslinje och använder under tiden generella referensvärden, så rådet blir mer personligt ju längre du använder appen. Dagsformen är ett stöd för att planera träningen, inte en hälsobedömning eller medicinsk rådgivning. Och det är alltid du som bestämmer.</p>
   </div>
 </section>
 
@@ -338,7 +337,7 @@
       <li class="feature reveal">
         <span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 20h5v-5h5v-5h5V5h3"/></svg></span>
         <h3>Lättare eller svårare</h3>
-        <p>Övningarna har instruktioner och progressionssteg. Byt till en lättare variant en tung dag, eller ta ett steg upp när du är redo.</p>
+        <p>Övningarna har instruktioner och progressionssteg. En tung dag väljer du en lättare variant innan passet startar, eller tar ett steg upp när du är redo.</p>
       </li>
       <li class="feature reveal">
         <span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg></span>
@@ -348,7 +347,7 @@
       <li class="feature reveal">
         <span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12h4l3-7 4 14 3-7h4"/></svg></span>
         <h3>Den lär känna dig</h3>
-        <p>Baslinjen byggs upp under de första veckorna, så att rådet utgår från ditt normala – inte från ett genomsnitt.</p>
+        <p>Baslinjen byggs upp under de första veckorna, och därefter utgår rådet från ditt normala i stället för ett genomsnitt.</p>
       </li>
       <li class="feature feature-wide reveal">
         <span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19c4-1 5-5 8-7s6-2 8-7"/><circle cx="4" cy="19" r="1.5"/><circle cx="20" cy="5" r="1.5"/></svg></span>
@@ -398,11 +397,11 @@
     <div class="faq">
       <details>
         <summary>Jag har inte tränat på länge. Passar Tavana mig?</summary>
-        <p>Ja – det är just dig vi har tänkt på. Du börjar med tre korta frågor, inget program startar automatiskt, och du kan alltid byta en övning mot en lättare variant. Rådet utgår från hur du mår idag, inte från var du var för två år sedan.</p>
+        <p>Ja – det är just dig vi har tänkt på. Du börjar med tre korta frågor, inget program startar automatiskt, och innan ett pass kan du byta en övning mot en lättare variant. Rådet utgår från hur du mår idag, inte från var du var för två år sedan.</p>
       </details>
       <details>
         <summary>Måste jag koppla Apple Hälsa?</summary>
-        <p>Nej. Med Apple Hälsa kan rådet ta hänsyn till sömn, HRV, vilopuls och steg. Utan Apple Hälsa bygger det på din check-in och det du själv anger.</p>
+        <p>Nej. Med Apple Hälsa kan rådet ta hänsyn till sömn, HRV och vilopuls, och i mindre grad steg. Utan Apple Hälsa bygger det på din check-in och det du själv anger.</p>
       </details>
       <details>
         <summary>Varför inga poäng?</summary>
