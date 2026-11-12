@@ -4,7 +4,7 @@
   "redirects": [
     {
       "source": "/app",
-      "destination": "/",
+      "destination": "https://apps.apple.com/app/id6779396971",
       "permanent": false
     },
     {
