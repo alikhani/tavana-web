@@ -18,7 +18,7 @@ typsnitt eller CDN:er och inga formulär; sidan behandlar inga personuppgifter.
 ├── assets/
 │   ├── style.css       all CSS (ljust + mörkt läge via prefers-color-scheme)
 │   ├── fonts/          Fraunces + Inter (woff2, latin) och licenserna OFL-*.txt
-│   ├── badges/         (saknas än) Apples App Store-märken, se "CTA-lägen"
+│   ├── badges/         Apples App Store-märken (sv/en, svart/vitt), se "CTA-lägen"
 │   ├── og-sv.png, og-en.png   delningsbilder 1200×630
 │   └── logo*.svg, favicon, apple-touch-icon, icon-512.png
 ├── og-src/             källa för OG-bilderna (deployas inte, se .vercelignore)
@@ -69,8 +69,8 @@ headern. Läget styrs av `data-cta` på `<html>` i `index.html` och `sv/index.ht
 
 | Läge | Visar | Länk |
 |---|---|---|
-| `soon` (nu) | "Kommer snart till iPhone" | – |
-| `appstore` (nästa) | Apples officiella App Store-märke + "Hämta appen" i headern | `/app` → App Store |
+| `soon` | "Kommer snart till iPhone" | – |
+| `appstore` (nu, sedan 2026-11-12, app-id 6779396971) | Apples officiella App Store-märke + "Hämta appen" i headern | `/app` → App Store |
 | `testflight` (sekundärt) | "Testa betan på iPhone" | `/beta` → publik TestFlight-länk |
 
 **Byt läge med ett kommando** (ändra inte filerna för hand):
@@ -167,8 +167,8 @@ Vercel: `npx vercel dev`.
 - [ ] **Användarvillkor** – samma sak i `terms.html` och `sv/terms.html`.
 - [ ] **Radering: lagringstider/undantag** – kommentar i `delete-account.html` och
       `sv/delete-account.html`.
-- [ ] **App Store** – lägg in märkena och kör `node scripts/set-cta.mjs appstore <app-id>`
-      (se "CTA-lägen").
+- [x] **App Store** – märkena inlagda och `node scripts/set-cta.mjs appstore 6779396971`
+      körd 2026-11-12 (se "CTA-lägen").
 - [ ] **Riktiga skärmdumpar** – se "Telefonmockups → riktiga skärmdumpar".
 - [ ] **Copyright-raden** "© 2026 Tavana" i sidfoten – byt till personuppgiftsansvarig/
       firmanamn om det ska stå där.
