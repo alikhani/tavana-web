@@ -34,14 +34,140 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Tavana",
-  "url": "https://tavana.app/sv/",
-  "image": "https://tavana.app/assets/icon-512.png",
-  "operatingSystem": "iOS",
-  "applicationCategory": "HealthApplication",
-  "inLanguage": ["sv", "en"],
-  "description": "Träningsapp som anpassar dagens träning efter dagsformen. Tavana läser sömn, HRV och vilopuls från Apple Hälsa om du tillåter, tar in en kort check-in och föreslår styrka, kondition, återhämtning eller vila – med en förklaring."
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://tavana.app/#org",
+      "name": "Tavana",
+      "url": "https://tavana.app/",
+      "logo": "https://tavana.app/assets/icon-512.png",
+      "sameAs": [
+        "https://apps.apple.com/app/id6779396971"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://tavana.app/#website",
+      "name": "Tavana",
+      "url": "https://tavana.app/",
+      "publisher": {
+        "@id": "https://tavana.app/#org"
+      },
+      "inLanguage": "sv"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://tavana.app/sv/#webpage",
+      "url": "https://tavana.app/sv/",
+      "name": "Tavana – träna efter dagsform och börja träna igen",
+      "inLanguage": "sv",
+      "isPartOf": {
+        "@id": "https://tavana.app/#website"
+      },
+      "about": {
+        "@id": "https://tavana.app/#app"
+      }
+    },
+    {
+      "@type": "MobileApplication",
+      "@id": "https://tavana.app/#app",
+      "name": "Tavana",
+      "url": "https://tavana.app/sv/",
+      "image": "https://tavana.app/assets/icon-512.png",
+      "operatingSystem": "iOS",
+      "applicationCategory": "HealthApplication",
+      "inLanguage": [
+        "en",
+        "sv"
+      ],
+      "description": "Träningsapp som anpassar dagens träning efter dagsformen. Tavana läser sömn, HRV och vilopuls från Apple Hälsa om du tillåter, tar in en kort check-in och föreslår styrka, kondition, återhämtning eller vila – med en förklaring.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "SEK"
+      },
+      "downloadUrl": "https://apps.apple.com/app/id6779396971",
+      "installUrl": "https://apps.apple.com/app/id6779396971",
+      "sameAs": [
+        "https://apps.apple.com/app/id6779396971"
+      ],
+      "publisher": {
+        "@id": "https://tavana.app/#org"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://tavana.app/sv/#faq",
+      "url": "https://tavana.app/sv/",
+      "inLanguage": "sv",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Jag har inte tränat på länge. Passar Tavana mig?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja – det är just dig vi har tänkt på. Du börjar med tre korta frågor, inget program startar automatiskt, och innan ett pass kan du byta en övning mot en lättare variant. Rådet utgår från hur du mår idag, inte från var du var för två år sedan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Måste jag koppla Apple Hälsa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nej. Med Apple Hälsa kan rådet ta hänsyn till sömn, HRV och vilopuls, och i mindre grad steg. Utan Apple Hälsa bygger det på din check-in och det du själv anger."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Varför inga poäng?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "För att ett tal lätt blir något att jaga eller oroa sig över. För att anpassa dagens träning räcker tre lägen: grön, gul eller röd, jämfört med din egen baslinje. Och du får alltid veta varför."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Måste jag följa ett program?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nej. Du kan träna helt utifrån dagens råd. Vill du ha en plan över flera veckor finns program under Resa, till exempel Couch to 5K eller nybörjarstyrka."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Är dagsformen ett medicinskt råd?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nej. Den är ett stöd för hur du lägger upp träningen idag, inte en hälsobedömning. Har du symtom eller frågor om din hälsa, kontakta vården."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Vad händer med min data?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Den används för att ge dig råd i appen – aldrig för reklam. Hälsodata används bara med ditt samtycke, och du kan exportera din data och radera ditt konto direkt i appen. Läs mer i integritetspolicyn."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Vad kostar det?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tavana är gratis att börja använda."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Finns Tavana för Android?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Inte än. Tavana kommer till iPhone först och till Android senare."
+          }
+        }
+      ]
+    }
+  ]
 }
 </script>
 </head>
@@ -79,7 +205,7 @@
         <!-- Läge "soon" -->
         <p class="cta-mode cta-soon soon-pill"><span class="live-dot" aria-hidden="true"></span>Kommer snart till iPhone</p>
         <!-- Läge "appstore": /app pekar på App Store via vercel.json. Slås på med scripts/set-cta.mjs. Kräver Apples officiella märken i assets/badges/ (se README). -->
-        <a class="cta-mode cta-appstore store-badge" href="/app"><picture><source srcset="/assets/badges/app-store-badge-sv-white.svg" media="(prefers-color-scheme: dark)"><img src="/assets/badges/app-store-badge-sv.svg" alt="Ladda ned på App Store" loading="lazy" width="156" height="52"></picture></a>
+        <a class="cta-mode cta-appstore store-badge" href="/app"><picture><source srcset="/assets/badges/app-store-badge-sv-white.svg" media="(prefers-color-scheme: dark)"><img src="/assets/badges/app-store-badge-sv.svg" alt="Ladda ned på App Store" width="156" height="52"></picture></a>
         <!-- Läge "testflight" (sekundärt): /beta pekar på den publika TestFlight-länken via vercel.json -->
         <a class="cta-mode cta-testflight btn btn-primary" href="/beta">Testa betan på iPhone</a>
         <a class="btn btn-ghost" href="#sa-funkar-det">Se hur det funkar</a>
@@ -393,6 +519,17 @@
     <div class="section-head center">
       <p class="eyebrow">Vanliga frågor</p>
       <h2 id="faq">Bra att veta innan du börjar</h2>
+    </div>
+    <div class="glance" id="i-korthet">
+      <h3 class="glance-title">Tavana i korthet</h3>
+      <dl class="glance-list">
+        <div><dt>Plattform</dt><dd>iPhone, i App Store. Android kommer senare.</dd></div>
+        <div><dt>Pris</dt><dd>Gratis att börja.</dd></div>
+        <div><dt>Språk</dt><dd>Svenska och engelska.</dd></div>
+        <div class="glance-wide"><dt>Det läser appen av</dt><dd>Sömn, HRV och vilopuls från Apple Hälsa, med steg som reserv. Att koppla Apple Hälsa är frivilligt. Plus en kort check-in: energi, stress, sömn och om du mår dåligt.</dd></div>
+        <div class="glance-wide"><dt>Det får du</dt><dd>Ett råd om dagen (styrka, kondition, återhämtning eller vila) med en förklaring. Dagsformen är grön, gul eller röd jämfört med din egen baslinje.</dd></div>
+        <div class="glance-wide"><dt>Ingår inte</dt><dd>Medicinsk rådgivning, poäng eller reklam.</dd></div>
+      </dl>
     </div>
     <div class="faq">
       <details>
