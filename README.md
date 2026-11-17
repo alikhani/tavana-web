@@ -173,8 +173,8 @@ Vercel: `npx vercel dev`.
 
 ## Platshållare – måste fyllas i före lansering
 
-- [ ] **Supportadress `support@tavana.app`** – inte bekräftad. Finns bara i
-      `support.html` och `sv/support.html` (markerad med `<!-- FYLL I -->`).
+- [x] **Supportadress `support@tavana.app`** – bekräftad av produktägaren 2026-11-17
+      (iCloud-domän). Står i `support.html`, `sv/support.html` och deras meta-beskrivningar.
 - [x] **Integritetspolicy** – publicerad i `privacy.html` och `sv/privacy.html`
       (version 1.0, senast uppdaterad 2026-11-02, commit `3eaede1`).
 - [x] **Användarvillkor** – publicerade i `terms.html` och `sv/terms.html` (samma version och commit).
