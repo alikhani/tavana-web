@@ -18,6 +18,7 @@ typsnitt eller CDN:er och inga formulär; sidan behandlar inga personuppgifter.
 ├── assets/
 │   ├── style.css       all CSS (ljust + mörkt läge via prefers-color-scheme)
 │   ├── fonts/          Fraunces + Inter (woff2, latin) och licenserna OFL-*.txt
+│   ├── screens/        appskärmdumpar sv/en (JPEG), se "Skärmdumpar i telefonramarna"
 │   ├── badges/         Apples App Store-märken (sv/en, svart/vitt), se "CTA-lägen"
 │   ├── og-sv.png, og-en.png   delningsbilder 1200×630
 │   └── logo*.svg, favicon, apple-touch-icon, icon-512.png
@@ -56,8 +57,8 @@ uppdateras.
 
 ## Startsidans upplägg
 
-Hero (rubrik, CTA, telefonmockup) → "Känner du igen dig?" (vardagsscener) → Så funkar
-det (fyra steg + check-in-mockup) → En dag med Tavana (tidslinje + pass-mockup) →
+Hero (rubrik, CTA, skärmdump av Idag) → "Känner du igen dig?" (vardagsscener) → Så funkar
+det (fyra steg + skärmdump av check-in) → En dag med Tavana (tidslinje + skärmdump av pass) →
 Dagsform (grön/gul/röd) → För återstartare → Integritet → Vanliga frågor (inleds med faktarutan "I korthet") → avslutande CTA.
 
 **Sanningskrav:** sidan påstår bara det appen gör i Release A. Nämn inte AI-coachen
@@ -126,24 +127,45 @@ Märket visas 52 px högt; justera inte under Apples minsta storlek.
 Efter lansering: uppdatera också "När kommer appen?" i `support.html` och
 `sv/support.html` och "Android kommer senare"-raderna om det ändras.
 
-## Telefonmockups → riktiga skärmdumpar
+## Skärmdumpar i telefonramarna
 
-Mockuperna är HTML/CSS-illustrationer (märkta "Illustration av appen") som speglar
-appens riktiga copy, t.ex. "Tavana rekommenderar ett lättare pass"
-(`tavana-ios/Coach/Features/Today/HeroDecisionCard.swift:484`). Byt till riktiga
-skärmdumpar så här:
+De tre telefonerna på startsidan (hero, "Så funkar det", "En dag med Tavana") och OG-bilderna
+visar riktiga skärmdumpar från appen, inte illustrationer:
 
-1. Ta skärmdumpar på iPhone 15/16 Pro Max-format, **1290×2796 px**, ljust läge, och
-   spara som WebP (kvalitet ~80, gärna < 150 KB styck):
-   `assets/screens/sv/today.webp`, `checkin.webp`, `workout.webp` och samma under
-   `assets/screens/en/`.
-2. I `index.html` och `sv/index.html`: ersätt innehållet i varje `<div class="phone-screen">`
-   med raden i HTML-kommentaren som står först i den, t.ex.
-   `<img src="/assets/screens/sv/today.webp" width="1290" height="2796" alt="">`
-   (CSS:en fyller ramen med `object-fit: cover`). Behåll `aria-label` på `.phone`, men
-   justera texten så att den beskriver skärmdumpen, och ta bort bildtexten
-   "Illustration av appen".
-3. Generera om OG-bilderna (nedan) om hero-skärmen ändras.
+```
+assets/screens/sv/today.jpg     vyn Idag: "Lägre än vanligt", "Lättare pass idag", sömn/vilopuls/HRV
+assets/screens/sv/checkin.jpg   "Uppdatera hur du mår" (energi, stress, mår du dåligt?)
+assets/screens/sv/workout.jpg   pågående pass "Underkroppspass"
+assets/screens/en/…             samma på engelska
+```
+
+Bilderna är 660×1434 px JPEG (kvalitet 80, 60–120 KB), ljust läge, utan statusrad, med
+demodata. Ramen (`.phone`/`.phone-screen` i `style.css`) har skärmdumpens bildförhållande
+(660/1434), så bilden visas hel utan beskärning eller utsträckning. `.phone` bär
+`role="img"` och en `aria-label` som beskriver skärmdumpen; själva `<img>` har `alt=""`.
+Hero-bilden laddas direkt (`fetchpriority="high"`), de två andra med `loading="lazy"`.
+`MobileApplication` i JSON-LD:n listar bilderna under `screenshot`.
+
+**Byta skärmdumpar** (t.ex. när Idag-vyn ändras):
+
+1. Exportera råa skärmdumpar från simulatorn (sv + en, 1320×2868 PNG):
+   ```bash
+   cd ../tavana-ios && scripts/export-website-screenshots.sh /tmp/website-screenshots
+   ```
+2. Konvertera till webbstorlek med `sips` (macOS, ingen extra installation):
+   ```bash
+   for l in sv en; do for s in today checkin workout; do
+     sips --resampleWidth 660 -s format jpeg -s formatOptions 80 \
+       /tmp/website-screenshots/$l/$s.png --out assets/screens/$l/$s.jpg
+   done; done
+   ```
+   Ändras bildförhållandet (annan simulator) ska `width`/`height` på `<img>` och
+   `aspect-ratio` på `.phone-screen` ändras till de nya måtten.
+3. Titta på bilderna och uppdatera `aria-label` på `.phone` i `index.html` och
+   `sv/index.html` om innehållet ändrats. Håll också de flytande korten i hero
+   ("Lägre än vanligt", "Check-in klar · Energi: trött · Stress: stressad") i takt med
+   vad skärmdumparna visar.
+4. Generera om OG-bilderna (nedan); `og-src/og-*.html` visar `today.jpg`.
 
 ## OG-bilder
 
@@ -187,6 +209,6 @@ Vercel: `npx vercel dev`.
       `sv/delete-account.html`.
 - [x] **App Store** – märkena inlagda och `node scripts/set-cta.mjs appstore 6779396971`
       körd 2026-11-12 (se "CTA-lägen").
-- [ ] **Riktiga skärmdumpar** – se "Telefonmockups → riktiga skärmdumpar".
+- [x] **Riktiga skärmdumpar** – inlagda 2026-11-17 (item 146 fas 2), se "Skärmdumpar i telefonramarna".
 - [ ] **Copyright-raden** "© 2026 Tavana" i sidfoten – byt till personuppgiftsansvarig/
       firmanamn om det ska stå där.
