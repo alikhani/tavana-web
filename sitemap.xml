@@ -1,13 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://tavana.app/</loc></url>
-  <url><loc>https://tavana.app/sv/</loc></url>
-  <url><loc>https://tavana.app/privacy</loc></url>
-  <url><loc>https://tavana.app/sv/privacy</loc></url>
-  <url><loc>https://tavana.app/terms</loc></url>
-  <url><loc>https://tavana.app/sv/terms</loc></url>
-  <url><loc>https://tavana.app/support</loc></url>
-  <url><loc>https://tavana.app/sv/support</loc></url>
-  <url><loc>https://tavana.app/delete-account</loc></url>
-  <url><loc>https://tavana.app/sv/delete-account</loc></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://tavana.app/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tavana.app/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://tavana.app/sv/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tavana.app/"/>
+  </url>
+  <url>
+    <loc>https://tavana.app/sv/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tavana.app/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://tavana.app/sv/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tavana.app/"/>
+  </url>
+  <url>
+    <loc>https://tavana.app/privacy</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tavana.app/privacy"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://tavana.app/sv/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tavana.app/privacy"/>
+  </url>
+  <url>
+    <loc>https://tavana.app/sv/privacy</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tavana.app/privacy"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://tavana.app/sv/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tavana.app/privacy"/>
+  </url>
+  <url>
+    <loc>https://tavana.app/terms</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tavana.app/terms"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://tavana.app/sv/terms"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tavana.app/terms"/>
+  </url>
+  <url>
+    <loc>https://tavana.app/sv/terms</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tavana.app/terms"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://tavana.app/sv/terms"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tavana.app/terms"/>
+  </url>
+  <url>
+    <loc>https://tavana.app/support</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tavana.app/support"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://tavana.app/sv/support"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tavana.app/support"/>
+  </url>
+  <url>
+    <loc>https://tavana.app/sv/support</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tavana.app/support"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://tavana.app/sv/support"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tavana.app/support"/>
+  </url>
+  <url>
+    <loc>https://tavana.app/delete-account</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tavana.app/delete-account"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://tavana.app/sv/delete-account"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tavana.app/delete-account"/>
+  </url>
+  <url>
+    <loc>https://tavana.app/sv/delete-account</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tavana.app/delete-account"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://tavana.app/sv/delete-account"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tavana.app/delete-account"/>
+  </url>
 </urlset>

@@ -34,14 +34,140 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Tavana",
-  "url": "https://tavana.app/",
-  "image": "https://tavana.app/assets/icon-512.png",
-  "operatingSystem": "iOS",
-  "applicationCategory": "HealthApplication",
-  "inLanguage": ["sv", "en"],
-  "description": "A training app that adapts today's training to how you feel. With your permission Tavana reads sleep, HRV and resting heart rate from Apple Health, takes a quick check-in and suggests strength, cardio, recovery or rest – with a reason."
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://tavana.app/#org",
+      "name": "Tavana",
+      "url": "https://tavana.app/",
+      "logo": "https://tavana.app/assets/icon-512.png",
+      "sameAs": [
+        "https://apps.apple.com/app/id6779396971"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://tavana.app/#website",
+      "name": "Tavana",
+      "url": "https://tavana.app/",
+      "publisher": {
+        "@id": "https://tavana.app/#org"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://tavana.app/#webpage",
+      "url": "https://tavana.app/",
+      "name": "Tavana – train by how you feel and get back into exercise",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://tavana.app/#website"
+      },
+      "about": {
+        "@id": "https://tavana.app/#app"
+      }
+    },
+    {
+      "@type": "MobileApplication",
+      "@id": "https://tavana.app/#app",
+      "name": "Tavana",
+      "url": "https://tavana.app/",
+      "image": "https://tavana.app/assets/icon-512.png",
+      "operatingSystem": "iOS",
+      "applicationCategory": "HealthApplication",
+      "inLanguage": [
+        "en",
+        "sv"
+      ],
+      "description": "A training app that adapts today's training to how you feel. With your permission Tavana reads sleep, HRV and resting heart rate from Apple Health, takes a quick check-in and suggests strength, cardio, recovery or rest – with a reason.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "SEK"
+      },
+      "downloadUrl": "https://apps.apple.com/app/id6779396971",
+      "installUrl": "https://apps.apple.com/app/id6779396971",
+      "sameAs": [
+        "https://apps.apple.com/app/id6779396971"
+      ],
+      "publisher": {
+        "@id": "https://tavana.app/#org"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://tavana.app/#faq",
+      "url": "https://tavana.app/",
+      "inLanguage": "en",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "I haven’t trained in ages. Is Tavana for me?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes – you’re exactly who we had in mind. You start with three short questions, no program starts automatically, and before a session you can swap an exercise for an easier variation. The suggestion is based on how you feel today, not on where you were two years ago."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I have to connect Apple Health?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. With Apple Health the suggestion can take sleep, HRV and resting heart rate into account, with steps playing a smaller part. Without it, it’s based on your check-in and what you tell the app."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why no scores?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Because a number easily becomes something to chase or worry about. Three states are enough to adapt today’s training: green, amber or red, compared with your own baseline. And you always get to know why."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I have to follow a program?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. You can train entirely by today’s suggestion. If you want a plan over several weeks, Journey has programs such as Couch to 5K or beginner strength."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is readiness medical advice?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. It’s a tool for planning today’s training, not a health assessment. If you have symptoms or questions about your health, talk to a healthcare professional."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens to my data?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It’s used to give you suggestions in the app – never for advertising. Health data is only used with your consent, and you can export your data and delete your account right in the app. Read more in the privacy policy."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does it cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tavana is free to get started."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Tavana available on Android?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not yet. Tavana is coming to iPhone first and to Android later."
+          }
+        }
+      ]
+    }
+  ]
 }
 </script>
 </head>
@@ -79,7 +205,7 @@
         <!-- Mode "soon" -->
         <p class="cta-mode cta-soon soon-pill"><span class="live-dot" aria-hidden="true"></span>Coming soon to iPhone</p>
         <!-- Mode "appstore": /app redirects to the App Store via vercel.json. Switched on with scripts/set-cta.mjs. Needs Apple's official badges in assets/badges/ (see README). -->
-        <a class="cta-mode cta-appstore store-badge" href="/app"><picture><source srcset="/assets/badges/app-store-badge-en-white.svg" media="(prefers-color-scheme: dark)"><img src="/assets/badges/app-store-badge-en.svg" alt="Download on the App Store" loading="lazy" width="156" height="52"></picture></a>
+        <a class="cta-mode cta-appstore store-badge" href="/app"><picture><source srcset="/assets/badges/app-store-badge-en-white.svg" media="(prefers-color-scheme: dark)"><img src="/assets/badges/app-store-badge-en.svg" alt="Download on the App Store" width="156" height="52"></picture></a>
         <!-- Mode "testflight" (secondary): /beta redirects to the public TestFlight link via vercel.json -->
         <a class="cta-mode cta-testflight btn btn-primary" href="/beta">Try the beta on iPhone</a>
         <a class="btn btn-ghost" href="#how-it-works">See how it works</a>
@@ -393,6 +519,17 @@
     <div class="section-head center">
       <p class="eyebrow">FAQ</p>
       <h2 id="faq">Good to know before you start</h2>
+    </div>
+    <div class="glance" id="at-a-glance">
+      <h3 class="glance-title">Tavana at a glance</h3>
+      <dl class="glance-list">
+        <div><dt>Platform</dt><dd>iPhone, on the App Store. Android later.</dd></div>
+        <div><dt>Price</dt><dd>Free to get started.</dd></div>
+        <div><dt>Languages</dt><dd>English and Swedish.</dd></div>
+        <div class="glance-wide"><dt>What it reads</dt><dd>Sleep, HRV and resting heart rate from Apple Health, with steps as a fallback. Connecting Apple Health is optional. Plus a quick check-in: energy, stress, sleep and whether you feel sick.</dd></div>
+        <div class="glance-wide"><dt>What you get</dt><dd>One suggestion a day (strength, cardio, recovery or rest) with a reason. Readiness is green, amber or red, compared with your own baseline.</dd></div>
+        <div class="glance-wide"><dt>Not included</dt><dd>Medical advice, scores or ads.</dd></div>
+      </dl>
     </div>
     <div class="faq">
       <details>
