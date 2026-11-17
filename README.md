@@ -9,8 +9,8 @@ typsnitt eller CDN:er och inga formulär; sidan behandlar inga personuppgifter.
 ```
 /                       engelska (rot, primärspråk)
 ├── index.html          startsida (promosida, se "Startsidans upplägg")
-├── privacy.html        /privacy  – ram, policytext saknas (se platshållare)
-├── terms.html          /terms    – ram, villkorstext saknas
+├── privacy.html        /privacy  – integritetspolicy (publicerad, version 1.0)
+├── terms.html          /terms    – användarvillkor (publicerade, version 1.0)
 ├── support.html        /support  – kontaktadress (mailto) och vanliga frågor
 ├── delete-account.html /delete-account – radera konto i appen eller via mejl
 ├── 404.html            tvåspråkig 404, engelska först (Vercel använder den automatiskt)
@@ -23,7 +23,9 @@ typsnitt eller CDN:er och inga formulär; sidan behandlar inga personuppgifter.
 │   └── logo*.svg, favicon, apple-touch-icon, icon-512.png
 ├── og-src/             källa för OG-bilderna (deployas inte, se .vercelignore)
 ├── scripts/set-cta.mjs byter CTA-läge (deployas inte)
-├── robots.txt, sitemap.xml
+├── robots.txt          tillåter alla sökrobotar och AI-crawlers (beslut 2026-11-17, item 146)
+├── sitemap.xml         lastmod (sidans senaste commit) och hreflang-par sv/en/x-default
+├── llms.txt            kort faktasammanfattning + länkar för AI-sök (llmstxt.org), engelska
 └── vercel.json         cleanUrls, redirecterna /app och /beta, säkerhetsheaders
 ```
 
@@ -56,11 +58,24 @@ uppdateras.
 
 Hero (rubrik, CTA, telefonmockup) → "Känner du igen dig?" (vardagsscener) → Så funkar
 det (fyra steg + check-in-mockup) → En dag med Tavana (tidslinje + pass-mockup) →
-Dagsform (grön/gul/röd) → För återstartare → Integritet → Vanliga frågor → avslutande CTA.
+Dagsform (grön/gul/röd) → För återstartare → Integritet → Vanliga frågor (inleds med faktarutan "I korthet") → avslutande CTA.
 
 **Sanningskrav:** sidan påstår bara det appen gör i Release A. Nämn inte AI-coachen
 (avstängd i Release A), pris, Apple Watch, cykeldata eller resultatlöften, och inga
 påhittade citat, betyg eller siffror.
+
+## SEO och AI-sök
+
+- **JSON-LD** i `<head>` på `index.html` och `sv/index.html`: en `@graph` med `Organization`,
+  `WebSite`, `WebPage`, `MobileApplication` (gratis att ladda ned: `price` 0, App Store-länk,
+  inga betyg eller recensioner) och `FAQPage`. **`FAQPage` måste spegla den synliga FAQ:n
+  ordagrant** (ren text, länkar borttagna) – ändras en fråga eller ett svar på sidan ska
+  JSON-LD:n ändras i samma commit, annars bryter det mot Googles riktlinjer.
+- **"I korthet"-rutan** (`.glance`, före FAQ:n) sammanfattar fakta som redan står på sidan.
+  Lägg inte in nya påståenden där; sanningskravet ovan gäller.
+- **`llms.txt`** i roten sammanfattar appen för AI-sök med länkar till sidorna. Håll den i
+  takt med startsidan.
+- **`sitemap.xml`**: uppdatera `<lastmod>` när en sidas innehåll ändras.
 
 ## CTA-lägen
 
@@ -160,11 +175,9 @@ Vercel: `npx vercel dev`.
 
 - [ ] **Supportadress `support@tavana.app`** – inte bekräftad. Finns bara i
       `support.html` och `sv/support.html` (markerad med `<!-- FYLL I -->`).
-- [ ] **Integritetspolicy** – `privacy.html` och `sv/privacy.html` visar bara
-      "publiceras före lansering". Ersätt `.placeholder`-blocket med den granskade texten
-      (se HTML-kommentaren) och fyll i "Senast uppdaterad". Publicera inte utkasten i
-      `docs/legal/` som de är.
-- [ ] **Användarvillkor** – samma sak i `terms.html` och `sv/terms.html`.
+- [x] **Integritetspolicy** – publicerad i `privacy.html` och `sv/privacy.html`
+      (version 1.0, senast uppdaterad 2026-11-02, commit `3eaede1`).
+- [x] **Användarvillkor** – publicerade i `terms.html` och `sv/terms.html` (samma version och commit).
 - [ ] **Radering: lagringstider/undantag** – kommentar i `delete-account.html` och
       `sv/delete-account.html`.
 - [x] **App Store** – märkena inlagda och `node scripts/set-cta.mjs appstore 6779396971`
