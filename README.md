@@ -99,9 +99,14 @@ node scripts/set-cta.mjs soon
 App-id är det enda som behövs för App Store-läget. Skriptet sätter `data-cta` på båda
 startsidorna, slår på `<meta name="apple-itunes-app" content="app-id=…">` (Safaris Smart
 App Banner, mellan `APP-BANNER`-markörerna i `<head>`) och pekar redirecten `/app` i
-`vercel.json` på `https://apps.apple.com/app/id<app-id>`. Committa och deploya sedan.
+`vercel.json` på `https://apps.apple.com/se/app/id<app-id>`. Committa och deploya sedan.
 `/app` och `/beta` fungerar också som korta länkar att dela (t.ex. tavana.app/app i en
 bio). Tills ett läge är påslaget pekar båda på `/`.
+
+App Store-länkarna använder uttryckligen den svenska butiken (`/se/`) eftersom
+Sverige är första lanseringsmarknaden. Länken utan landskod kan välja USA:s butik
+och visa att sidan saknas trots att appen finns i den svenska butiken. Uppdatera
+butiksvalet när appens tillgänglighet utökas till fler länder.
 
 **Före App Store-läget: lägg in Apples officiella märken.** Skriptet vägrar byta läge
 om de saknas. Ladda ned från Apple Marketing Tools
