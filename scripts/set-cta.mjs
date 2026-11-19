@@ -37,7 +37,7 @@ if (mode === "appstore") {
   if (!/^\d{6,12}$/.test(value ?? "")) fail("ange app-id (bara siffror), t.ex. `appstore 1234567890`.");
   const missing = badges.filter((b) => !existsSync(join(root, b)));
   if (missing.length) fail(`Apples officiella märken saknas (se README):\n  ${missing.join("\n  ")}`);
-  appUrl = `https://apps.apple.com/app/id${value}`;
+  appUrl = `https://apps.apple.com/se/app/id${value}`;
   banner = `<meta name="apple-itunes-app" content="app-id=${value}">`;
 } else if (mode === "testflight") {
   if (!/^https:\/\/testflight\.apple\.com\/join\/[A-Za-z0-9]+$/.test(value ?? ""))
