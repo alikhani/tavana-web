@@ -22,7 +22,7 @@
 <meta property="og:image" content="https://tavana.app/assets/og-en.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Tavana – Train by how you feel today. A phone shows the suggestion “Tavana recommends a lighter session”.">
+<meta property="og:image:alt" content="Tavana – Train by how you feel today. A phone shows Tavana’s Today screen with the suggestion “Lighter session today”.">
 <meta property="og:locale" content="en_GB">
 <meta property="og:locale:alternate" content="sv_SE">
 <meta name="twitter:card" content="summary_large_image">
@@ -88,6 +88,11 @@
       },
       "downloadUrl": "https://apps.apple.com/se/app/id6779396971",
       "installUrl": "https://apps.apple.com/se/app/id6779396971",
+      "screenshot": [
+        "https://tavana.app/assets/screens/en/today.jpg",
+        "https://tavana.app/assets/screens/en/checkin.jpg",
+        "https://tavana.app/assets/screens/en/workout.jpg"
+      ],
       "sameAs": [
         "https://apps.apple.com/se/app/id6779396971"
       ],
@@ -162,7 +167,7 @@
           "name": "Is Tavana available on Android?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Not yet. Tavana is coming to iPhone first and to Android later."
+            "text": "Not yet. Tavana is on iPhone first, and an Android version will follow later."
           }
         }
       ]
@@ -211,7 +216,7 @@
         <a class="btn btn-ghost" href="#how-it-works">See how it works</a>
         <p class="cta-note">
           <span class="cta-mode cta-soon">Free to get started<span class="sep" aria-hidden="true">·</span>Android later</span>
-          <span class="cta-mode cta-appstore">Free to get started<span class="sep" aria-hidden="true">·</span>For iPhone</span>
+          <span class="cta-mode cta-appstore">Free to get started<span class="sep" aria-hidden="true">·</span>Swedish App Store for now</span>
           <span class="cta-mode cta-testflight">Via Apple’s TestFlight app<span class="sep" aria-hidden="true">·</span>Free</span>
         </p>
       </div>
@@ -226,41 +231,18 @@
     <div class="hero-visual">
       <div class="float-card float-a" aria-hidden="true">
         <span class="dot dot-amber"></span>
-        <span><strong>Amber today</strong>compared with your own baseline</span>
+        <span><strong>Lower than usual</strong>compared with your own baseline</span>
       </div>
       <div class="float-card float-b" aria-hidden="true">
         <span class="dot dot-green"></span>
-        <span><strong>Check-in done</strong>Energy 2 of 5 · Stress 4 of 5</span>
+        <span><strong>Check-in done</strong>Energy: sluggish · Stress: stressed</span>
       </div>
       <figure class="phone-figure">
-        <div class="phone" role="img" aria-label="Illustration of Tavana’s Today screen: readiness is amber and the card says “Tavana recommends a lighter session” because sleep was below your baseline.">
-          <div class="phone-screen" aria-hidden="true">
-            <!-- Swap for a real screenshot: <img src="/assets/screens/en/today.webp" width="1290" height="2796" alt=""> (see README) -->
-            <div class="ui-status"><span>9:41</span><i></i></div>
-            <p class="ui-sub">Tuesday</p>
-            <p class="ui-title">Today</p>
-            <div class="ui-card ui-card-amber">
-              <span class="ui-chip ui-chip-amber"><span class="dot"></span>Amber readiness</span>
-              <p class="ui-h">Tavana recommends a lighter session</p>
-              <p class="ui-p">You slept less than usual last night. Today’s session is a little lighter – you’re always in charge.</p>
-              <ul class="ui-rows">
-                <li><b>Sleep</b><span>below your baseline</span></li>
-                <li><b>HRV</b><span>as usual</span></li>
-                <li><b>Check-in</b><span>stress 4 of 5</span></li>
-              </ul>
-              <div class="ui-btn">Start lighter version</div>
-              <span class="ui-link">See lighter options</span>
-            </div>
-            <div class="ui-card">
-              <p class="ui-label">Today’s session</p>
-              <div class="ui-session">
-                <div><b>Strength · full body</b><span>5 exercises × 2 sets</span></div>
-                <span class="ui-icon"></span>
-              </div>
-            </div>
+        <div class="phone" role="img" aria-label="Screenshot of Tavana’s Today screen: readiness is “Lower than usual” because sleep is below your baseline and resting heart rate is higher than usual, and the card suggests “Lighter session today”, with buttons to start the lighter version or show the planned session. Below it: sleep 5 h 36 min, resting heart rate 60 bpm and HRV 44 ms.">
+          <div class="phone-screen">
+            <img src="/assets/screens/en/today.jpg" width="660" height="1434" alt="" fetchpriority="high">
           </div>
         </div>
-        <figcaption class="phone-caption">App illustration</figcaption>
       </figure>
     </div>
   </div>
@@ -298,34 +280,11 @@
   <div class="wrap how-grid">
     <div class="how-visual">
       <figure class="phone-figure">
-        <div class="phone" role="img" aria-label="Illustration of Tavana’s quick check-in, asking about energy, stress, sleep and whether you feel sick.">
-          <div class="phone-screen" aria-hidden="true">
-            <!-- Swap for a real screenshot: <img src="/assets/screens/en/checkin.webp" width="1290" height="2796" alt=""> -->
-            <div class="ui-status"><span>7:12</span><i></i></div>
-            <p class="ui-title">Quick check-in</p>
-            <p class="ui-sub">A few taps, then you get today’s suggestion.</p>
-            <div class="ui-card">
-              <p class="ui-q">How is your energy now?</p>
-              <div class="ui-scale"><span>1</span><span class="on">2</span><span>3</span><span>4</span><span>5</span></div>
-              <div class="ui-scale-ends"><span>Low</span><span>High</span></div>
-            </div>
-            <div class="ui-card">
-              <p class="ui-q">How stressed do you feel?</p>
-              <div class="ui-scale"><span>1</span><span>2</span><span>3</span><span class="on">4</span><span>5</span></div>
-              <div class="ui-scale-ends"><span>Calm</span><span>Stressed</span></div>
-            </div>
-            <div class="ui-card">
-              <p class="ui-q">How did you sleep?</p>
-              <div class="ui-scale"><span>1</span><span class="on">2</span><span>3</span><span>4</span><span>5</span></div>
-            </div>
-            <div class="ui-card ui-toggle-row">
-              <p class="ui-q">Feeling sick?</p>
-              <span class="ui-toggle"></span>
-            </div>
-            <div class="ui-btn">Save check-in</div>
+        <div class="phone" role="img" aria-label="Screenshot of Tavana’s check-in “Update how you feel”: energy is set to Sluggish and stress to Stressed, followed by “Feeling sick?” (No symptoms, Feeling off or Sick), an optional note and a Save check-in button.">
+          <div class="phone-screen">
+            <img src="/assets/screens/en/checkin.jpg" width="660" height="1434" alt="" loading="lazy" decoding="async">
           </div>
         </div>
-        <figcaption class="phone-caption">App illustration</figcaption>
       </figure>
     </div>
     <div>
@@ -345,7 +304,7 @@
         </li>
         <li class="reveal">
           <h3>Check in in seconds</h3>
-          <p>Energy, stress, sleep and whether you feel sick. No long forms.</p>
+          <p>Energy, stress and whether you feel sick, plus sleep if Apple Health has none. No long forms.</p>
         </li>
         <li class="reveal">
           <h3>Get today’s suggestion</h3>
@@ -367,7 +326,7 @@
         <li class="reveal">
           <span class="when">Morning</span>
           <h3>Readiness turns amber</h3>
-          <p>You slept less than usual and stress is high. Instead of pretending it’s business as usual, the app says it plainly: <span class="quote-ui">“Tavana recommends a lighter session.”</span> And explains why.</p>
+          <p>You slept less than usual and stress is high. Instead of pretending it’s business as usual, the app says it plainly: <span class="quote-ui">“Lighter session today.”</span> And explains why.</p>
         </li>
         <li class="reveal">
           <span class="when">The workout</span>
@@ -383,37 +342,11 @@
     </div>
     <div class="how-visual">
       <figure class="phone-figure">
-        <div class="phone" role="img" aria-label="Illustration of a workout in Tavana: exercise 2 of 5 with the first set completed and the next exercises listed.">
-          <div class="phone-screen" aria-hidden="true">
-            <!-- Swap for a real screenshot: <img src="/assets/screens/en/workout.webp" width="1290" height="2796" alt=""> -->
-            <div class="ui-status"><span>17:48</span><i></i></div>
-            <p class="ui-sub">Strength · full body</p>
-            <p class="ui-title">Exercise 2 of 5</p>
-            <div class="ui-progress"><i></i></div>
-            <div class="ui-card">
-              <p class="ui-h first">Goblet squat</p>
-              <p class="ui-p">Feet shoulder-width apart, chest up. Lower with control.</p>
-              <ul class="ui-sets">
-                <li class="done"><span class="n">Set 1</span><span>10 reps</span><span>8 kg</span><span class="ui-check"></span></li>
-                <li class="now"><span class="n">Set 2</span><span>10 reps</span><span>8 kg</span><span class="ui-check"></span></li>
-                <li><span class="n">Set 3</span><span>10 reps</span><span>8 kg</span><span class="ui-check"></span></li>
-              </ul>
-            </div>
-            <div class="ui-card ui-next">
-              <p class="ui-label">Up next</p>
-              <div class="ui-session">
-                <div><b>Incline push-up</b><span>3 sets · 8 reps</span></div>
-              </div>
-            </div>
-            <div class="ui-card ui-next">
-              <div class="ui-session">
-                <div><b>Dumbbell row</b><span>3 sets · 10 reps</span></div>
-              </div>
-            </div>
-            <div class="ui-btn">Finish set 2</div>
+        <div class="phone" role="img" aria-label="Screenshot of an active workout in Tavana, “Lower body”: all three sets of barbell back squat are ticked off and Romanian deadlift is next, with 3 of 6 sets done.">
+          <div class="phone-screen">
+            <img src="/assets/screens/en/workout.jpg" width="660" height="1434" alt="" loading="lazy" decoding="async">
           </div>
         </div>
-        <figcaption class="phone-caption">App illustration</figcaption>
       </figure>
     </div>
   </div>
@@ -523,10 +456,10 @@
     <div class="glance" id="at-a-glance">
       <h3 class="glance-title">Tavana at a glance</h3>
       <dl class="glance-list">
-        <div><dt>Platform</dt><dd>iPhone, on the App Store. Android later.</dd></div>
+        <div><dt>Platform</dt><dd>iPhone, on the App Store in Sweden for now. Android later.</dd></div>
         <div><dt>Price</dt><dd>Free to get started.</dd></div>
         <div><dt>Languages</dt><dd>English and Swedish.</dd></div>
-        <div class="glance-wide"><dt>What it reads</dt><dd>Sleep, HRV and resting heart rate from Apple Health, with steps as a fallback. Connecting Apple Health is optional. Plus a quick check-in: energy, stress, sleep and whether you feel sick.</dd></div>
+        <div class="glance-wide"><dt>What it reads</dt><dd>Sleep, HRV and resting heart rate from Apple Health, with steps as a fallback. Connecting Apple Health is optional. Plus a quick check-in: energy, stress and whether you feel sick, and sleep if Apple Health has none.</dd></div>
         <div class="glance-wide"><dt>What you get</dt><dd>One suggestion a day (strength, cardio, recovery or rest) with a reason. Readiness is green, amber or red, compared with your own baseline.</dd></div>
         <div class="glance-wide"><dt>Not included</dt><dd>Medical advice, scores or ads.</dd></div>
       </dl>
@@ -562,7 +495,7 @@
       </details>
       <details>
         <summary>Is Tavana available on Android?</summary>
-        <p>Not yet. Tavana is coming to iPhone first and to Android later.</p>
+        <p>Not yet. Tavana is on iPhone first, and an Android version will follow later.</p>
       </details>
     </div>
     <p class="muted faq-more">More questions? <a href="/support">Get in touch</a>.</p>
@@ -579,7 +512,7 @@
         <p class="cta-mode cta-soon soon-pill"><span class="live-dot" aria-hidden="true"></span>Coming soon to iPhone</p>
         <a class="cta-mode cta-appstore store-badge" href="/app"><img src="/assets/badges/app-store-badge-en-white.svg" alt="Download on the App Store" loading="lazy" width="156" height="52"></a>
         <a class="cta-mode cta-testflight btn btn-primary" href="/beta">Try the beta on iPhone</a>
-        <p class="cta-note">Free to get started<span class="sep" aria-hidden="true">·</span>No ads<span class="sep" aria-hidden="true">·</span>Android later</p>
+        <p class="cta-note">Free to get started<span class="sep" aria-hidden="true">·</span>No ads<span class="cta-mode cta-appstore"><span class="sep" aria-hidden="true">·</span>Available in Sweden for now</span><span class="cta-mode cta-soon cta-testflight"><span class="sep" aria-hidden="true">·</span>Android later</span></p>
       </div>
     </div>
   </div>

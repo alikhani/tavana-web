@@ -22,7 +22,7 @@
 <meta property="og:image" content="https://tavana.app/assets/og-sv.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Tavana – Träna efter hur du mår idag. En telefon visar rådet ”Tavana rekommenderar ett lättare pass”.">
+<meta property="og:image:alt" content="Tavana – Träna efter hur du mår idag. En telefon visar Tavanas vy Idag med rådet ”Lättare pass idag”.">
 <meta property="og:locale" content="sv_SE">
 <meta property="og:locale:alternate" content="en_GB">
 <meta name="twitter:card" content="summary_large_image">
@@ -88,6 +88,11 @@
       },
       "downloadUrl": "https://apps.apple.com/se/app/id6779396971",
       "installUrl": "https://apps.apple.com/se/app/id6779396971",
+      "screenshot": [
+        "https://tavana.app/assets/screens/sv/today.jpg",
+        "https://tavana.app/assets/screens/sv/checkin.jpg",
+        "https://tavana.app/assets/screens/sv/workout.jpg"
+      ],
       "sameAs": [
         "https://apps.apple.com/se/app/id6779396971"
       ],
@@ -162,7 +167,7 @@
           "name": "Finns Tavana för Android?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Inte än. Tavana kommer till iPhone först och till Android senare."
+            "text": "Inte än. Tavana finns för iPhone först, och en Android-version kommer senare."
           }
         }
       ]
@@ -211,7 +216,7 @@
         <a class="btn btn-ghost" href="#sa-funkar-det">Se hur det funkar</a>
         <p class="cta-note">
           <span class="cta-mode cta-soon">Gratis att börja<span class="sep" aria-hidden="true">·</span>Android kommer senare</span>
-          <span class="cta-mode cta-appstore">Gratis att börja<span class="sep" aria-hidden="true">·</span>För iPhone</span>
+          <span class="cta-mode cta-appstore">Gratis att börja<span class="sep" aria-hidden="true">·</span>Just nu i svenska App Store</span>
           <span class="cta-mode cta-testflight">Via Apples app TestFlight<span class="sep" aria-hidden="true">·</span>Gratis</span>
         </p>
       </div>
@@ -226,41 +231,18 @@
     <div class="hero-visual">
       <div class="float-card float-a" aria-hidden="true">
         <span class="dot dot-amber"></span>
-        <span><strong>Gul idag</strong>jämfört med din egen baslinje</span>
+        <span><strong>Lägre än vanligt</strong>jämfört med din egen baslinje</span>
       </div>
       <div class="float-card float-b" aria-hidden="true">
         <span class="dot dot-green"></span>
-        <span><strong>Check-in klar</strong>Energi 2 av 5 · Stress 4 av 5</span>
+        <span><strong>Check-in klar</strong>Energi: trött · Stress: stressad</span>
       </div>
       <figure class="phone-figure">
-        <div class="phone" role="img" aria-label="Illustration av Tavanas vy Idag: dagsformen är gul och kortet säger ”Tavana rekommenderar ett lättare pass” eftersom sömnen låg under din baslinje.">
-          <div class="phone-screen" aria-hidden="true">
-            <!-- Byt till riktig skärmdump: <img src="/assets/screens/sv/today.webp" width="1290" height="2796" alt=""> (se README) -->
-            <div class="ui-status"><span>9:41</span><i></i></div>
-            <p class="ui-sub">Tisdag</p>
-            <p class="ui-title">Idag</p>
-            <div class="ui-card ui-card-amber">
-              <span class="ui-chip ui-chip-amber"><span class="dot"></span>Gul dagsform</span>
-              <p class="ui-h">Tavana rekommenderar ett lättare pass</p>
-              <p class="ui-p">Du sov kortare än vanligt i natt. Dagens pass blir lite lättare – du bestämmer alltid.</p>
-              <ul class="ui-rows">
-                <li><b>Sömn</b><span>under din baslinje</span></li>
-                <li><b>HRV</b><span>som vanligt</span></li>
-                <li><b>Check-in</b><span>stress 4 av 5</span></li>
-              </ul>
-              <div class="ui-btn">Starta lättare version</div>
-              <span class="ui-link">Se lättare alternativ</span>
-            </div>
-            <div class="ui-card">
-              <p class="ui-label">Dagens pass</p>
-              <div class="ui-session">
-                <div><b>Styrka · helkropp</b><span>5 övningar à 2 set</span></div>
-                <span class="ui-icon"></span>
-              </div>
-            </div>
+        <div class="phone" role="img" aria-label="Skärmdump av Tavanas vy Idag: dagsformen är ”Lägre än vanligt” eftersom sömnen ligger under din baslinje och vilopulsen är högre än vanligt, och kortet föreslår ”Lättare pass idag”, med knappar för att starta den lättare versionen eller visa det planerade passet. Under kortet: sömn 5 h 36 min, vilopuls 60 slag/min och HRV 44 ms.">
+          <div class="phone-screen">
+            <img src="/assets/screens/sv/today.jpg" width="660" height="1434" alt="" fetchpriority="high">
           </div>
         </div>
-        <figcaption class="phone-caption">Illustration av appen</figcaption>
       </figure>
     </div>
   </div>
@@ -298,34 +280,11 @@
   <div class="wrap how-grid">
     <div class="how-visual">
       <figure class="phone-figure">
-        <div class="phone" role="img" aria-label="Illustration av Tavanas snabba incheckning med frågor om energi, stress, sömn och om du mår dåligt.">
-          <div class="phone-screen" aria-hidden="true">
-            <!-- Byt till riktig skärmdump: <img src="/assets/screens/sv/checkin.webp" width="1290" height="2796" alt=""> -->
-            <div class="ui-status"><span>7:12</span><i></i></div>
-            <p class="ui-title">Snabb incheckning</p>
-            <p class="ui-sub">Några tryck – sedan får du dagens råd.</p>
-            <div class="ui-card">
-              <p class="ui-q">Hur är energin nu?</p>
-              <div class="ui-scale"><span>1</span><span class="on">2</span><span>3</span><span>4</span><span>5</span></div>
-              <div class="ui-scale-ends"><span>Låg</span><span>Hög</span></div>
-            </div>
-            <div class="ui-card">
-              <p class="ui-q">Hur stressad känner du dig?</p>
-              <div class="ui-scale"><span>1</span><span>2</span><span>3</span><span class="on">4</span><span>5</span></div>
-              <div class="ui-scale-ends"><span>Lugn</span><span>Stressad</span></div>
-            </div>
-            <div class="ui-card">
-              <p class="ui-q">Hur sov du?</p>
-              <div class="ui-scale"><span>1</span><span class="on">2</span><span>3</span><span>4</span><span>5</span></div>
-            </div>
-            <div class="ui-card ui-toggle-row">
-              <p class="ui-q">Mår du dåligt?</p>
-              <span class="ui-toggle"></span>
-            </div>
-            <div class="ui-btn">Spara incheckning</div>
+        <div class="phone" role="img" aria-label="Skärmdump av Tavanas incheckning ”Uppdatera hur du mår”: energin är satt till Trött och stressen till Stressad, följt av ”Mår du dåligt?” (Inga symtom, Inte på topp eller Sjuk), en valfri anteckning och knappen Spara incheckning.">
+          <div class="phone-screen">
+            <img src="/assets/screens/sv/checkin.jpg" width="660" height="1434" alt="" loading="lazy" decoding="async">
           </div>
         </div>
-        <figcaption class="phone-caption">Illustration av appen</figcaption>
       </figure>
     </div>
     <div>
@@ -345,7 +304,7 @@
         </li>
         <li class="reveal">
           <h3>Checka in på några sekunder</h3>
-          <p>Energi, stress, sömn och om du mår dåligt. Inga långa formulär.</p>
+          <p>Energi, stress och om du mår dåligt, plus sömn om Apple Hälsa saknar sömndata. Inga långa formulär.</p>
         </li>
         <li class="reveal">
           <h3>Få dagens råd</h3>
@@ -367,7 +326,7 @@
         <li class="reveal">
           <span class="when">Morgon</span>
           <h3>Dagsformen blir gul</h3>
-          <p>Du sov kortare än vanligt och stressen är hög. I stället för att låtsas att allt är som vanligt säger appen det rakt ut: <span class="quote-ui">”Tavana rekommenderar ett lättare pass.”</span> Och förklarar varför.</p>
+          <p>Du sov kortare än vanligt och stressen är hög. I stället för att låtsas att allt är som vanligt säger appen det rakt ut: <span class="quote-ui">”Lättare pass idag.”</span> Och förklarar varför.</p>
         </li>
         <li class="reveal">
           <span class="when">Passet</span>
@@ -383,37 +342,11 @@
     </div>
     <div class="how-visual">
       <figure class="phone-figure">
-        <div class="phone" role="img" aria-label="Illustration av ett pass i Tavana: övning 2 av 5 med första setet avbockat och nästa övningar listade.">
-          <div class="phone-screen" aria-hidden="true">
-            <!-- Byt till riktig skärmdump: <img src="/assets/screens/sv/workout.webp" width="1290" height="2796" alt=""> -->
-            <div class="ui-status"><span>17:48</span><i></i></div>
-            <p class="ui-sub">Styrka · helkropp</p>
-            <p class="ui-title">Övning 2 av 5</p>
-            <div class="ui-progress"><i></i></div>
-            <div class="ui-card">
-              <p class="ui-h first">Knäböj med hantel</p>
-              <p class="ui-p">Fötterna axelbrett, bröstet upp. Sänk dig kontrollerat.</p>
-              <ul class="ui-sets">
-                <li class="done"><span class="n">Set 1</span><span>10 reps</span><span>8 kg</span><span class="ui-check"></span></li>
-                <li class="now"><span class="n">Set 2</span><span>10 reps</span><span>8 kg</span><span class="ui-check"></span></li>
-                <li><span class="n">Set 3</span><span>10 reps</span><span>8 kg</span><span class="ui-check"></span></li>
-              </ul>
-            </div>
-            <div class="ui-card ui-next">
-              <p class="ui-label">Nästa</p>
-              <div class="ui-session">
-                <div><b>Armhävning mot bänk</b><span>3 set · 8 reps</span></div>
-              </div>
-            </div>
-            <div class="ui-card ui-next">
-              <div class="ui-session">
-                <div><b>Rodd med hantel</b><span>3 set · 10 reps</span></div>
-              </div>
-            </div>
-            <div class="ui-btn">Klar med set 2</div>
+        <div class="phone" role="img" aria-label="Skärmdump av ett pågående pass i Tavana, ”Underkroppspass”: alla tre seten knäböj med skivstång är avbockade och Romanian deadlift står på tur, med 3 av 6 set klara.">
+          <div class="phone-screen">
+            <img src="/assets/screens/sv/workout.jpg" width="660" height="1434" alt="" loading="lazy" decoding="async">
           </div>
         </div>
-        <figcaption class="phone-caption">Illustration av appen</figcaption>
       </figure>
     </div>
   </div>
@@ -523,10 +456,10 @@
     <div class="glance" id="i-korthet">
       <h3 class="glance-title">Tavana i korthet</h3>
       <dl class="glance-list">
-        <div><dt>Plattform</dt><dd>iPhone, i App Store. Android kommer senare.</dd></div>
+        <div><dt>Plattform</dt><dd>iPhone, i svenska App Store än så länge. Android kommer senare.</dd></div>
         <div><dt>Pris</dt><dd>Gratis att börja.</dd></div>
         <div><dt>Språk</dt><dd>Svenska och engelska.</dd></div>
-        <div class="glance-wide"><dt>Det läser appen av</dt><dd>Sömn, HRV och vilopuls från Apple Hälsa, med steg som reserv. Att koppla Apple Hälsa är frivilligt. Plus en kort check-in: energi, stress, sömn och om du mår dåligt.</dd></div>
+        <div class="glance-wide"><dt>Det läser appen av</dt><dd>Sömn, HRV och vilopuls från Apple Hälsa, med steg som reserv. Att koppla Apple Hälsa är frivilligt. Plus en kort check-in: energi, stress och om du mår dåligt, och sömn om Apple Hälsa saknar sömndata.</dd></div>
         <div class="glance-wide"><dt>Det får du</dt><dd>Ett råd om dagen (styrka, kondition, återhämtning eller vila) med en förklaring. Dagsformen är grön, gul eller röd jämfört med din egen baslinje.</dd></div>
         <div class="glance-wide"><dt>Ingår inte</dt><dd>Medicinsk rådgivning, poäng eller reklam.</dd></div>
       </dl>
@@ -562,7 +495,7 @@
       </details>
       <details>
         <summary>Finns Tavana för Android?</summary>
-        <p>Inte än. Tavana kommer till iPhone först och till Android senare.</p>
+        <p>Inte än. Tavana finns för iPhone först, och en Android-version kommer senare.</p>
       </details>
     </div>
     <p class="muted faq-more">Fler frågor? <a href="/sv/support">Kontakta oss</a>.</p>
@@ -579,7 +512,7 @@
         <p class="cta-mode cta-soon soon-pill"><span class="live-dot" aria-hidden="true"></span>Kommer snart till iPhone</p>
         <a class="cta-mode cta-appstore store-badge" href="/app"><img src="/assets/badges/app-store-badge-sv-white.svg" alt="Ladda ned på App Store" loading="lazy" width="156" height="52"></a>
         <a class="cta-mode cta-testflight btn btn-primary" href="/beta">Testa betan på iPhone</a>
-        <p class="cta-note">Gratis att börja<span class="sep" aria-hidden="true">·</span>Ingen reklam<span class="sep" aria-hidden="true">·</span>Android kommer senare</p>
+        <p class="cta-note">Gratis att börja<span class="sep" aria-hidden="true">·</span>Ingen reklam<span class="cta-mode cta-appstore"><span class="sep" aria-hidden="true">·</span>Än så länge bara i Sverige</span><span class="cta-mode cta-soon cta-testflight"><span class="sep" aria-hidden="true">·</span>Android kommer senare</span></p>
       </div>
     </div>
   </div>
