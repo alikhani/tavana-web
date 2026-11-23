@@ -2,7 +2,7 @@
 
 > Tavana is an iPhone training app that gives you one suggestion a day (strength, cardio, recovery or rest), with a reason, based on how you feel today.
 
-Tavana is made for people getting back into exercise. With your permission it reads sleep, HRV and resting heart rate from Apple Health, with steps mainly as a fallback, and adds a quick check-in on energy, stress and whether you feel sick, plus sleep if Apple Health has none. Apple Health is optional; without it the suggestion is based on the check-in and what you tell the app. After a week or two of data, readiness is shown as one of three states (green, amber or red) compared with your own baseline, never as a numeric score. Exercises come with instructions and easier or harder variations, and Journey has optional multi-week programs such as Couch to 5K and beginner strength. Tavana is free to get started, has no ads, is for people aged 18 and over, and is available in English and Swedish on the App Store for iPhone; Android is planned for later. Readiness is a tool for planning training, not a health assessment or medical advice.
+Tavana is made for people getting back into exercise. With your permission it reads sleep, HRV and resting heart rate from Apple Health, with steps mainly as a fallback, and adds a quick check-in on energy, stress and whether you feel sick, plus sleep if Apple Health has none. Apple Health is optional; without it the suggestion is based on the check-in and what you tell the app. After a week or two of data, readiness is shown as one of three states (green, amber or red) compared with your own baseline, never as a numeric score. Exercises come with instructions and easier or harder variations, and Journey has optional multi-week programs such as Couch to 5K and beginner strength. Tavana is free to get started, has no ads, is for people aged 18 and over, and is available in English and Swedish for iPhone, on the App Store in Sweden for now; Android is planned for later. Readiness is a tool for planning training, not a health assessment or medical advice.
 
 ## Website
 
@@ -11,7 +11,7 @@ Tavana is made for people getting back into exercise. With your permission it re
 
 ## App
 
-- [Tavana on the App Store](https://apps.apple.com/se/app/id6779396971): download for iPhone
+- [Tavana on the App Store](https://apps.apple.com/se/app/id6779396971): download for iPhone (Swedish App Store)
 
 ## Help and legal
 
