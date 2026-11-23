@@ -393,7 +393,7 @@ html[data-cta="testflight"] .nav-cta-item.cta-testflight { display: list-item; }
 /* Flytande kort runt telefonen */
 .float-card {
   position: absolute;
-  z-index: 2;
+  z-index: 4; /* över Dynamic Island (z-index 3) på smala skärmar */
   display: flex;
   align-items: center;
   gap: 10px;
@@ -409,16 +409,16 @@ html[data-cta="testflight"] .nav-cta-item.cta-testflight { display: list-item; }
 }
 .float-card strong { display: block; color: var(--text); font-size: 0.875rem; }
 .float-card .dot { width: 12px; height: 12px; }
-.float-a { left: 0; bottom: 14%; animation: drift 7s ease-in-out infinite; }
-.float-b { right: 0; top: 7%; animation: drift 8s 1.2s ease-in-out infinite; }
+/* Placerade över skärmdumpens tomma topp och nederkant, så att hälsningen och mätvärdena syns. */
+.float-a { left: 0; bottom: 1%; animation: drift 7s ease-in-out infinite; }
+.float-b { right: 0; top: 0; animation: drift 8s 1.2s ease-in-out infinite; }
 
-/* ---------- Telefonmockup ----------
-   Stiliserad iPhone-ram. .phone-screen innehåller en HTML-illustration och kan
-   ersättas med <img> av en riktig skärmdump (1290×2796), se README. */
+/* ---------- Telefon med skärmdump ----------
+   Stiliserad iPhone-ram runt en riktig skärmdump (assets/screens/, 660×1434, se README).
+   Skärmen har skärmdumpens bildförhållande, så bilden fylls ut utan beskärning. */
 .phone {
   position: relative;
   width: min(300px, 78vw);
-  aspect-ratio: 1290 / 2796;
   margin: 0;
   padding: 11px;
   border-radius: 52px;
@@ -438,153 +438,13 @@ html[data-cta="testflight"] .nav-cta-item.cta-testflight { display: list-item; }
 }
 .phone-screen {
   position: relative;
-  height: 100%;
+  aspect-ratio: 660 / 1434;
   overflow: hidden;
   border-radius: 42px;
   background: var(--bg);
-  color: var(--text);
-  font-size: 11.5px;
-  line-height: 1.4;
-  padding: 50px 14px 14px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  text-align: left;
 }
-.phone-screen > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.phone-caption {
-  margin: 14px 0 0;
-  text-align: center;
-  font-size: 0.8rem;
-  color: var(--text-2);
-}
+.phone-screen > img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .phone-figure { margin: 0; display: flex; flex-direction: column; align-items: center; }
-
-.ui-status {
-  position: absolute;
-  top: 18px; left: 26px; right: 24px;
-  display: flex;
-  justify-content: space-between;
-  font-weight: 600;
-  font-size: 12px;
-}
-.ui-status i {
-  display: inline-block;
-  width: 22px; height: 10px;
-  border: 1.5px solid currentColor;
-  border-radius: 3px;
-  opacity: 0.8;
-  position: relative;
-}
-.ui-status i::after { content: ""; position: absolute; inset: 1.5px 5px 1.5px 1.5px; background: currentColor; border-radius: 1px; }
-.ui-title {
-  font-family: var(--serif);
-  font-size: 24px;
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  margin: 4px 2px 2px;
-  line-height: 1.1;
-}
-.ui-sub { margin: 0 2px; color: var(--text-2); font-size: 11px; }
-.ui-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  padding: 12px;
-}
-.ui-card-amber { background: linear-gradient(180deg, var(--amber-tint), transparent 70%), var(--surface); }
-.ui-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 3px 9px;
-  border-radius: 999px;
-  font-size: 10.5px;
-  font-weight: 600;
-}
-.ui-chip-amber { background: var(--amber-tint); color: var(--accent-fg); }
-.ui-chip-amber .dot { background: var(--amber); }
-.ui-chip .dot { width: 7px; height: 7px; }
-.ui-h { font-family: var(--serif); font-size: 16px; font-weight: 500; line-height: 1.2; margin: 8px 0 4px; letter-spacing: -0.01em; }
-.ui-p { margin: 0; color: var(--text-2); font-size: 11px; }
-.ui-rows { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 6px; }
-.ui-rows li {
-  display: flex; justify-content: space-between; align-items: center; gap: 8px;
-  padding: 7px 9px;
-  border-radius: 10px;
-  background: var(--surface-muted);
-  font-size: 10.5px;
-}
-.ui-rows b { font-weight: 600; }
-.ui-rows span { color: var(--text-2); }
-.ui-btn {
-  display: flex; align-items: center; justify-content: center;
-  height: 34px;
-  margin-top: 10px;
-  border-radius: 999px;
-  background: var(--brand-fill);
-  color: var(--on-brand);
-  font-weight: 600;
-  font-size: 11.5px;
-}
-.ui-link { display: block; text-align: center; margin-top: 8px; color: var(--brand); font-weight: 600; font-size: 11px; }
-.ui-label { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-2); margin: 0 0 4px; }
-.ui-session { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
-.ui-session b { display: block; font-size: 12.5px; }
-.ui-session span { color: var(--text-2); font-size: 10.5px; }
-.ui-icon {
-  width: 34px; height: 34px; border-radius: 10px; flex: none;
-  background: var(--green-tint);
-  display: grid; place-items: center;
-}
-.ui-icon::before { content: ""; width: 14px; height: 6px; border-radius: 3px; background: var(--brand); box-shadow: -7px 0 0 -1px var(--brand), 7px 0 0 -1px var(--brand); }
-
-.ui-q { margin: 0 0 6px; font-weight: 600; font-size: 11.5px; }
-.ui-scale { display: grid; grid-template-columns: repeat(5, 1fr); gap: 5px; }
-.ui-scale span {
-  height: 28px; border-radius: 9px;
-  display: grid; place-items: center;
-  background: var(--surface-muted);
-  font-size: 11px; font-weight: 600; color: var(--text-2);
-}
-.ui-scale span.on { background: var(--brand-fill); color: var(--on-brand); }
-.ui-scale-ends { display: flex; justify-content: space-between; font-size: 9.5px; color: var(--text-2); margin-top: 4px; }
-.ui-toggle-row { display: flex; justify-content: space-between; align-items: center; }
-.ui-toggle { width: 36px; height: 21px; border-radius: 999px; background: var(--border); position: relative; }
-.ui-toggle::after { content: ""; position: absolute; left: 2px; top: 2px; width: 17px; height: 17px; border-radius: 50%; background: var(--surface); box-shadow: 0 1px 2px rgba(0,0,0,.2); }
-
-.ui-sets { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 5px; }
-.ui-sets li {
-  display: grid;
-  grid-template-columns: 34px 1fr 1fr 22px;
-  align-items: center;
-  gap: 6px;
-  padding: 7px 8px;
-  border-radius: 10px;
-  background: var(--surface-muted);
-  font-size: 11px;
-}
-.ui-sets li.done { background: var(--green-tint); }
-.ui-sets li.now { background: var(--surface); outline: 1.5px solid var(--brand); }
-.ui-sets .n { color: var(--text-2); font-weight: 600; }
-.ui-check {
-  width: 20px; height: 20px; border-radius: 50%;
-  border: 1.5px solid var(--border);
-  display: grid; place-items: center;
-}
-.done .ui-check { background: var(--brand-fill); border-color: var(--brand-fill); }
-.done .ui-check::after { content: ""; width: 7px; height: 4px; border-left: 2px solid var(--on-brand); border-bottom: 2px solid var(--on-brand); transform: translateY(-1px) rotate(-45deg); }
-.ui-swap { display: flex; gap: 6px; margin-top: 10px; }
-.ui-swap span {
-  flex: 1; text-align: center;
-  padding: 6px 0;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  font-size: 10.5px; font-weight: 600;
-}
-.ui-progress { height: 4px; border-radius: 4px; background: var(--surface-muted); overflow: hidden; }
-.ui-progress i { display: block; height: 100%; width: 40%; background: var(--brand); border-radius: 4px; }
-.ui-next { opacity: 0.75; }
 
 /* ---------- Sektioner ---------- */
 main { display: block; }
@@ -1031,7 +891,5 @@ main { display: block; }
 /* Hjälpklasser (CSP tillåter inga inline-stilar) */
 .soon-pill { margin: 0; }
 .section-head.tight { margin-bottom: 40px; }
-.ui-toggle-row .ui-q { margin: 0; }
-.ui-h.first { margin-top: 0; }
 .faq-more { text-align: center; margin-top: 32px; }
 .store-badge picture { display: block; }
